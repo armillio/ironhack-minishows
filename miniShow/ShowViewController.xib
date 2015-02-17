@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ShowViewController">
@@ -14,73 +15,120 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sG6-nf-6GX" userLabel="ShowView">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="1000"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sG6-nf-6GX" userLabel="ShowView">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                     <subviews>
-                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mnq-zh-btc">
-                            <rect key="frame" x="0.0" y="0.0" width="600" height="1000"/>
+                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mnq-zh-btc">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="WallpaperWizard" translatesAutoresizingMaskIntoConstraints="NO" id="nIl-yf-o5W">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WallpaperWizard" translatesAutoresizingMaskIntoConstraints="NO" id="nIl-yf-o5W" userLabel="ShowImageView">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="240"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="240" id="Nix-Vl-0Nx"/>
+                                    </constraints>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n7s-yD-GoS" userLabel="GeneralInfoLabel">
-                                    <rect key="frame" x="31" y="248" width="539" height="48"/>
-                                    <string key="text">General info
-</string>
-                                    <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="48"/>
-                                    <color key="textColor" red="0.3411764705882353" green="0.3411764705882353" blue="0.3411764705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tfe-1i-BDE" userLabel="GeneralInfoTextView">
-                                    <rect key="frame" x="31" y="289" width="539" height="115"/>
+                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="249" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tfe-1i-BDE" userLabel="ContentTextView">
+                                    <rect key="frame" x="30" y="270" width="540" height="115"/>
                                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
                                     <color key="textColor" red="0.3411764705882353" green="0.3411764705882353" blue="0.3411764705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="24"/>
-                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                </textView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Overview" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RMo-1P-4Q2" userLabel="OverviewLabel">
-                                    <rect key="frame" x="31" y="412" width="539" height="48"/>
-                                    <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="48"/>
-                                    <color key="textColor" red="0.3411764706" green="0.3411764706" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ero-kE-hf5" userLabel="OverviewTextView">
-                                    <rect key="frame" x="31" y="468" width="539" height="115"/>
-                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
-                                    <color key="textColor" red="0.3411764706" green="0.3411764706" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="24"/>
                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 </textView>
                             </subviews>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="tfe-1i-BDE" secondAttribute="bottom" constant="30" id="7Ou-Ag-Mdh"/>
+                                <constraint firstAttribute="trailing" secondItem="tfe-1i-BDE" secondAttribute="trailing" constant="30" id="97r-Qv-oWI"/>
+                                <constraint firstAttribute="trailing" secondItem="nIl-yf-o5W" secondAttribute="trailing" id="CDK-Md-ZMU"/>
+                                <constraint firstItem="tfe-1i-BDE" firstAttribute="top" secondItem="nIl-yf-o5W" secondAttribute="bottom" constant="30" id="ZCm-Uu-yPK"/>
+                                <constraint firstItem="nIl-yf-o5W" firstAttribute="leading" secondItem="mnq-zh-btc" secondAttribute="leading" id="dS5-MA-NLH"/>
+                                <constraint firstItem="nIl-yf-o5W" firstAttribute="top" secondItem="mnq-zh-btc" secondAttribute="top" id="i4G-1A-LT1"/>
+                                <constraint firstItem="tfe-1i-BDE" firstAttribute="leading" secondItem="mnq-zh-btc" secondAttribute="leading" constant="30" id="to1-98-Jy6"/>
+                            </constraints>
                         </scrollView>
-                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5OT-FN-e1i" userLabel="ButtonBar">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5OT-FN-e1i" userLabel="ButtonBarView">
                             <rect key="frame" x="0.0" y="202" width="600" height="38"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gZB-2P-1p5" userLabel="seenIcon">
-                                    <rect key="frame" x="124" y="6" width="30" height="25"/>
+                                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gZB-2P-1p5" userLabel="seenIcon">
+                                    <rect key="frame" x="165" y="6" width="30" height="25"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="25" id="5aT-pW-Bbb"/>
+                                        <constraint firstAttribute="width" constant="30" id="XMa-Kb-U4F"/>
+                                        <constraint firstAttribute="width" secondItem="gZB-2P-1p5" secondAttribute="height" multiplier="6:5" id="aNx-jL-j8T"/>
+                                    </constraints>
                                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
                                     <state key="normal" image="seenButton"/>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fJI-gc-PMo" userLabel="infoIcon">
-                                    <rect key="frame" x="303" y="6" width="30" height="25"/>
+                                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WcQ-DL-3VF" userLabel="shareIcon">
+                                    <rect key="frame" x="405" y="6" width="30" height="25"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="WcQ-DL-3VF" secondAttribute="height" multiplier="9:5" id="g29-0W-oud"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                    <state key="normal" image="shareButton"/>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="g29-0W-oud"/>
+                                        </mask>
+                                    </variation>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fJI-gc-PMo" userLabel="infoIcon">
+                                    <rect key="frame" x="285" y="6" width="30" height="25"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="fJI-gc-PMo" secondAttribute="height" multiplier="6:5" id="f6L-PH-r0g"/>
+                                    </constraints>
                                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
                                     <state key="normal" image="infoButton"/>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WcQ-DL-3VF" userLabel="shareIcon">
-                                    <rect key="frame" x="496" y="6" width="30" height="25"/>
-                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
-                                    <state key="normal" image="shareButton"/>
-                                </button>
                             </subviews>
                             <color key="backgroundColor" red="0.4941176471" green="0.82745098039999998" blue="0.12941176469999999" alpha="0.38" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstItem="gZB-2P-1p5" firstAttribute="top" secondItem="5OT-FN-e1i" secondAttribute="top" constant="6" id="28M-bh-Jl9"/>
+                                <constraint firstItem="fJI-gc-PMo" firstAttribute="top" secondItem="5OT-FN-e1i" secondAttribute="top" constant="6" id="ChQ-Ge-jyL"/>
+                                <constraint firstItem="gZB-2P-1p5" firstAttribute="width" secondItem="fJI-gc-PMo" secondAttribute="width" id="FNS-rf-YRL"/>
+                                <constraint firstItem="WcQ-DL-3VF" firstAttribute="leading" secondItem="fJI-gc-PMo" secondAttribute="trailing" priority="250" constant="90" id="FNU-xd-jgw"/>
+                                <constraint firstItem="WcQ-DL-3VF" firstAttribute="top" secondItem="5OT-FN-e1i" secondAttribute="top" constant="6" id="KOP-Jf-Bhu"/>
+                                <constraint firstAttribute="bottom" secondItem="WcQ-DL-3VF" secondAttribute="bottom" constant="7" id="NXl-zY-QVs"/>
+                                <constraint firstItem="fJI-gc-PMo" firstAttribute="width" secondItem="WcQ-DL-3VF" secondAttribute="width" id="RqH-cf-pjh"/>
+                                <constraint firstAttribute="centerX" secondItem="fJI-gc-PMo" secondAttribute="centerX" id="VLY-r2-Oat"/>
+                                <constraint firstItem="fJI-gc-PMo" firstAttribute="leading" secondItem="gZB-2P-1p5" secondAttribute="trailing" priority="250" constant="90" id="WO6-sd-krw"/>
+                                <constraint firstItem="fJI-gc-PMo" firstAttribute="height" secondItem="WcQ-DL-3VF" secondAttribute="height" id="Y07-y1-LrU"/>
+                                <constraint firstAttribute="bottom" secondItem="fJI-gc-PMo" secondAttribute="bottom" constant="7" id="c2G-X1-bGY"/>
+                                <constraint firstAttribute="bottom" secondItem="gZB-2P-1p5" secondAttribute="bottom" constant="7" id="hSN-7o-p0W"/>
+                                <constraint firstAttribute="height" constant="38" id="mXA-gc-LuU"/>
+                                <constraint firstItem="gZB-2P-1p5" firstAttribute="height" secondItem="fJI-gc-PMo" secondAttribute="height" id="tN3-M5-ZHI"/>
+                            </constraints>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="hSN-7o-p0W"/>
+                                    <exclude reference="c2G-X1-bGY"/>
+                                    <exclude reference="NXl-zY-QVs"/>
+                                </mask>
+                            </variation>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" red="0.63412602488705327" green="1" blue="0.96982010857100553" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="mnq-zh-btc" firstAttribute="top" secondItem="sG6-nf-6GX" secondAttribute="top" id="5aW-nC-E1h"/>
+                        <constraint firstItem="mnq-zh-btc" firstAttribute="width" secondItem="sG6-nf-6GX" secondAttribute="width" id="7fN-rE-6Qa"/>
+                        <constraint firstAttribute="trailing" secondItem="mnq-zh-btc" secondAttribute="trailing" id="CZK-fI-QEg"/>
+                        <constraint firstAttribute="trailing" secondItem="5OT-FN-e1i" secondAttribute="trailing" id="Ccg-29-f0T"/>
+                        <constraint firstAttribute="bottom" secondItem="mnq-zh-btc" secondAttribute="bottom" id="DZx-cD-9RS"/>
+                        <constraint firstItem="5OT-FN-e1i" firstAttribute="width" secondItem="sG6-nf-6GX" secondAttribute="width" id="E00-g7-bX2"/>
+                        <constraint firstItem="nIl-yf-o5W" firstAttribute="width" secondItem="sG6-nf-6GX" secondAttribute="width" id="Nna-4j-Evh"/>
+                        <constraint firstItem="5OT-FN-e1i" firstAttribute="top" secondItem="nIl-yf-o5W" secondAttribute="bottom" constant="-38" id="YGs-Nd-5F6"/>
+                        <constraint firstItem="mnq-zh-btc" firstAttribute="leading" secondItem="sG6-nf-6GX" secondAttribute="leading" id="ja0-Pl-tt3"/>
+                        <constraint firstItem="5OT-FN-e1i" firstAttribute="leading" secondItem="sG6-nf-6GX" secondAttribute="leading" id="rKD-Tj-JCL"/>
+                    </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="sG6-nf-6GX" secondAttribute="bottom" id="3C5-s1-BC1"/>
+                <constraint firstItem="sG6-nf-6GX" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="3UZ-Pi-OzZ"/>
+                <constraint firstAttribute="trailing" secondItem="sG6-nf-6GX" secondAttribute="trailing" id="Mqm-UW-6DW"/>
+                <constraint firstItem="sG6-nf-6GX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="UVM-zD-Xj0"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="93" y="213"/>
+            <point key="canvasLocation" x="93" y="132"/>
         </view>
     </objects>
     <resources>
