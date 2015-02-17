@@ -8,10 +8,16 @@
 
 #import "MainViewController.h"
 #import "ShowViewController.h"
+#import "MainViewTableViewCell.h"
 
-@interface MainViewController ()
+NSString * const kMainShowCellIdentifier = @"MainShowCell";
+
+
+@interface MainViewController () <UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic, strong) ShowViewController *svc;
+
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -21,6 +27,21 @@
     [super viewDidLoad];
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(openShowView)];
+    
+    
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"settingsButton"] style:UIBarButtonItemStylePlain target:self action:@selector(openSettings)];
+    
+    /* Initializing the tableview */
+    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([MainViewTableViewCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([MainViewTableViewCell class])];
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
+    
+    
+}
+
+- (void) openSettings
+{
+
 }
 
 -(void) openShowView
@@ -40,24 +61,33 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 #warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return 3;
 }
 
-/*
+
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    MainViewTableViewCell *cell = (MainViewTableViewCell *)[tableView dequeueReusableCellWithIdentifier:NSStringFromClass([MainViewTableViewCell class]) forIndexPath:indexPath];
+    
+    [cell adjustCellAppearance];
+    
+    
     
     // Configure the cell...
     
     return cell;
 }
-*/
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 100;
+}
 
 /*
 // Override to support conditional editing of the table view.
