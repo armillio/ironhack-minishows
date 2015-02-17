@@ -9,11 +9,16 @@
 /* Begin PBXBuildFile section */
 		4751DE941A938EF400A224E2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4751DE931A938EF400A224E2 /* main.m */; };
 		4751DE971A938EF400A224E2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4751DE961A938EF400A224E2 /* AppDelegate.m */; };
-		4751DE9A1A938EF400A224E2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4751DE991A938EF400A224E2 /* ViewController.m */; };
 		4751DE9D1A938EF400A224E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4751DE9B1A938EF400A224E2 /* Main.storyboard */; };
 		4751DE9F1A938EF400A224E2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4751DE9E1A938EF400A224E2 /* Images.xcassets */; };
 		4751DEA21A938EF400A224E2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4751DEA01A938EF400A224E2 /* LaunchScreen.xib */; };
 		4751DEAE1A938EF400A224E2 /* miniShowTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4751DEAD1A938EF400A224E2 /* miniShowTests.m */; };
+		4751DEC21A938F7900A224E2 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4751DEBA1A938F7900A224E2 /* MainViewController.m */; };
+		4751DEC31A938F7900A224E2 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4751DEBB1A938F7900A224E2 /* MainViewController.xib */; };
+		4751DEC41A938F7900A224E2 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4751DEBD1A938F7900A224E2 /* SettingsViewController.m */; };
+		4751DEC51A938F7900A224E2 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4751DEBE1A938F7900A224E2 /* SettingsViewController.xib */; };
+		4751DEC61A938F7900A224E2 /* ShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4751DEC01A938F7900A224E2 /* ShowViewController.m */; };
+		4751DEC71A938F7900A224E2 /* ShowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4751DEC11A938F7900A224E2 /* ShowViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,14 +37,21 @@
 		4751DE931A938EF400A224E2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4751DE951A938EF400A224E2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4751DE961A938EF400A224E2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		4751DE981A938EF400A224E2 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		4751DE991A938EF400A224E2 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		4751DE9C1A938EF400A224E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4751DE9E1A938EF400A224E2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4751DEA11A938EF400A224E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		4751DEA71A938EF400A224E2 /* miniShowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = miniShowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4751DEAC1A938EF400A224E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4751DEAD1A938EF400A224E2 /* miniShowTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = miniShowTests.m; sourceTree = "<group>"; };
+		4751DEB91A938F7900A224E2 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		4751DEBA1A938F7900A224E2 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		4751DEBB1A938F7900A224E2 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		4751DEBC1A938F7900A224E2 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		4751DEBD1A938F7900A224E2 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		4751DEBE1A938F7900A224E2 /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
+		4751DEBF1A938F7900A224E2 /* ShowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowViewController.h; sourceTree = "<group>"; };
+		4751DEC01A938F7900A224E2 /* ShowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowViewController.m; sourceTree = "<group>"; };
+		4751DEC11A938F7900A224E2 /* ShowViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShowViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,10 +93,10 @@
 		4751DE901A938EF400A224E2 /* miniShow */ = {
 			isa = PBXGroup;
 			children = (
+				4751DEB81A938F0900A224E2 /* Controllers */,
+				4751DEB71A938EFF00A224E2 /* Views */,
 				4751DE951A938EF400A224E2 /* AppDelegate.h */,
 				4751DE961A938EF400A224E2 /* AppDelegate.m */,
-				4751DE981A938EF400A224E2 /* ViewController.h */,
-				4751DE991A938EF400A224E2 /* ViewController.m */,
 				4751DE9B1A938EF400A224E2 /* Main.storyboard */,
 				4751DE9E1A938EF400A224E2 /* Images.xcassets */,
 				4751DEA01A938EF400A224E2 /* LaunchScreen.xib */,
@@ -117,6 +129,29 @@
 				4751DEAC1A938EF400A224E2 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4751DEB71A938EFF00A224E2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4751DEBB1A938F7900A224E2 /* MainViewController.xib */,
+				4751DEBE1A938F7900A224E2 /* SettingsViewController.xib */,
+				4751DEC11A938F7900A224E2 /* ShowViewController.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		4751DEB81A938F0900A224E2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4751DEB91A938F7900A224E2 /* MainViewController.h */,
+				4751DEBA1A938F7900A224E2 /* MainViewController.m */,
+				4751DEBC1A938F7900A224E2 /* SettingsViewController.h */,
+				4751DEBD1A938F7900A224E2 /* SettingsViewController.m */,
+				4751DEBF1A938F7900A224E2 /* ShowViewController.h */,
+				4751DEC01A938F7900A224E2 /* ShowViewController.m */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,8 +235,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				4751DE9D1A938EF400A224E2 /* Main.storyboard in Resources */,
+				4751DEC71A938F7900A224E2 /* ShowViewController.xib in Resources */,
 				4751DEA21A938EF400A224E2 /* LaunchScreen.xib in Resources */,
 				4751DE9F1A938EF400A224E2 /* Images.xcassets in Resources */,
+				4751DEC31A938F7900A224E2 /* MainViewController.xib in Resources */,
+				4751DEC51A938F7900A224E2 /* SettingsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,9 +257,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4751DE9A1A938EF400A224E2 /* ViewController.m in Sources */,
 				4751DE971A938EF400A224E2 /* AppDelegate.m in Sources */,
+				4751DEC41A938F7900A224E2 /* SettingsViewController.m in Sources */,
 				4751DE941A938EF400A224E2 /* main.m in Sources */,
+				4751DEC21A938F7900A224E2 /* MainViewController.m in Sources */,
+				4751DEC61A938F7900A224E2 /* ShowViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
