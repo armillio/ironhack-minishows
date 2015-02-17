@@ -7,6 +7,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ShowViewController">
             <connections>
+                <outlet property="showButtonBar" destination="5OT-FN-e1i" id="dAs-FJ-UoO"/>
+                <outlet property="showButtonBarConstrait" destination="YGs-Nd-5F6" id="gui-hQ-imO"/>
+                <outlet property="showContent" destination="tfe-1i-BDE" id="ob9-OM-9uD"/>
+                <outlet property="showImage" destination="nIl-yf-o5W" id="ggZ-jp-xZE"/>
+                <outlet property="showImageConstraint" destination="Nix-Vl-0Nx" id="5KU-af-lPC"/>
+                <outlet property="showScrollView" destination="mnq-zh-btc" id="Z4W-RE-hCh"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -27,9 +33,9 @@
                                         <constraint firstAttribute="height" constant="240" id="Nix-Vl-0Nx"/>
                                     </constraints>
                                 </imageView>
-                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="249" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tfe-1i-BDE" userLabel="ContentTextView">
-                                    <rect key="frame" x="30" y="270" width="540" height="115"/>
-                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
+                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="249" scrollEnabled="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tfe-1i-BDE" userLabel="ContentTextView">
+                                    <rect key="frame" x="30" y="270" width="540" height="313"/>
+                                    <string key="text">My money's in that office, right? If she start giving me some bullshit about it ain't there, and we got to go someplace else and get it, I'm gonna shoot you in the head then and there. Then I'm gonna shoot that bitch in the kneecaps, find out where my goddamn money is. She gonna tell me too. Hey, look at me when I'm talking to you, motherfucker. You listen: we go in there, and that nigga Winston or anybody else is in there, you the first motherfucker to get shot. You understand?</string>
                                     <color key="textColor" red="0.3411764705882353" green="0.3411764705882353" blue="0.3411764705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="24"/>
                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
