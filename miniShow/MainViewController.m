@@ -11,6 +11,10 @@
 #import "MainViewTableViewCell.h"
 
 NSString * const kMainShowCellIdentifier = @"MainShowCell";
+NSUInteger const kCellHeightPortrait = 90;
+NSUInteger const kCellHeightLandscape = 70;
+NSUInteger const kCellSpacing = 5;
+
 
 
 @interface MainViewController () <UITableViewDataSource,UITableViewDelegate>
@@ -36,9 +40,11 @@ NSString * const kMainShowCellIdentifier = @"MainShowCell";
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     
+    
     self.tableView.separatorStyle =UITableViewCellSeparatorStyleNone;
-    self.tableView.separatorInset = UIEdgeInsetsMake(10.0f, 0, 10.0f, 0);
-
+    
+    
+    self.navigationController.navigationBar.topItem.title = @"miniShow";
 }
 
 - (void) openSettings
@@ -63,38 +69,48 @@ NSString * const kMainShowCellIdentifier = @"MainShowCell";
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 #warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 1;
+    return 10;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 10;
+    return 1;
 }
 
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return kCellSpacing;
+}
+
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIView *v = [UIView new];
+    [v setBackgroundColor:[UIColor clearColor]];
+    return v;
+}
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     MainViewTableViewCell *cell = (MainViewTableViewCell *)[tableView dequeueReusableCellWithIdentifier:NSStringFromClass([MainViewTableViewCell class]) forIndexPath:indexPath];
     
-    //[cell adjustCellAppearance];
-    
-    
-    
-    // Configure the cell...
-    
+    [cell adjustCellAppearance];
+
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 100;
+    if(self.view.frame.size.width < 450)
+        return kCellHeightPortrait;
+    else
+        return kCellHeightLandscape;
 }
 
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    [self openShowView];
+    [self openShowView];
 }
 
 /*
