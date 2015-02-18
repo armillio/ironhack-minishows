@@ -43,11 +43,13 @@ NSUInteger const kCellSpacing = 5;
 
 - (void) updateViewAesthetics
 {
-    // Navigation Controller
+    // Navigation Bar Items
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(openShowView)];
     
     
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"settingsButton"] style:UIBarButtonItemStylePlain target:self action:@selector(openSettings)];
+    
+    // Title in Navigation Bar
     self.navigationController.navigationBar.topItem.title = @"miniSHOWS";
     [self.navigationController.navigationBar setTitleTextAttributes:
      [NSDictionary dictionaryWithObjectsAndKeys:
