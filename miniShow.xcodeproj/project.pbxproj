@@ -157,11 +157,19 @@
 			isa = PBXGroup;
 			children = (
 				9131FDBC1A94F6FE00212927 /* Main */,
-				4751DEBF1A938F7900A224E2 /* ShowViewController.h */,
-				4751DEC01A938F7900A224E2 /* ShowViewController.m */,
+				47DD65561A950577004C8DB3 /* Show */,
 				9131FDBB1A94F6DC00212927 /* Settings */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		47DD65561A950577004C8DB3 /* Show */ = {
+			isa = PBXGroup;
+			children = (
+				4751DEBF1A938F7900A224E2 /* ShowViewController.h */,
+				4751DEC01A938F7900A224E2 /* ShowViewController.m */,
+			);
+			name = Show;
 			sourceTree = "<group>";
 		};
 		9131FDBB1A94F6DC00212927 /* Settings */ = {
