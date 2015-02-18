@@ -14,14 +14,11 @@ IB_DESIGNABLE
 
 - (void) adjustCellAppearance
 {
-
     self.titleLabel.text = @"Breaking Bad";
     self.descriptionLabel.text = @"Season 3 Episode 6";
     self.behindCountLabel.text = @"5 behind";
     self.iv.image = [UIImage imageNamed:@"breaking_bad"];
     self.iv.clipsToBounds = YES;
-
-    //self.imageView.contentMode = UIView;
 }
 
 - (void)awakeFromNib {

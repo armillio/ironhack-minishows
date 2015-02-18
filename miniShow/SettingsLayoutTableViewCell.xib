@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -12,7 +13,28 @@
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="xrk-sV-frL">
+                        <rect key="frame" x="10" y="7" width="300" height="29"/>
+                        <segments>
+                            <segment title="LIST LAYOUT"/>
+                            <segment title="GRID LAYOUT"/>
+                        </segments>
+                        <connections>
+                            <action selector="selectionChanged:" destination="KGk-i7-Jjw" eventType="valueChanged" id="76o-nL-iuW"/>
+                        </connections>
+                    </segmentedControl>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="centerX" secondItem="xrk-sV-frL" secondAttribute="centerX" id="9kC-D9-aH0"/>
+                    <constraint firstAttribute="centerY" secondItem="xrk-sV-frL" secondAttribute="centerY" id="Czi-1n-DPu"/>
+                    <constraint firstItem="xrk-sV-frL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="2" id="bSv-PG-mEv"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="xrk-sV-frL" secondAttribute="trailing" constant="2" id="uRS-32-ZL1"/>
+                </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="segmentedControl" destination="xrk-sV-frL" id="0YS-WO-EqB"/>
+            </connections>
         </tableViewCell>
     </objects>
 </document>

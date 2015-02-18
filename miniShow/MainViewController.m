@@ -8,6 +8,7 @@
 
 #import "MainViewController.h"
 #import "ShowViewController.h"
+#import "SettingsViewController.h"
 #import "MainViewTableViewCell.h"
 
 NSString * const kMainShowCellIdentifier = @"MainShowCell";
@@ -19,7 +20,8 @@ NSUInteger const kCellSpacing = 5;
 
 @interface MainViewController () <UITableViewDataSource,UITableViewDelegate>
 
-@property (nonatomic, strong) ShowViewController *svc;
+@property (nonatomic, strong) ShowViewController *showViewController;
+@property (nonatomic, strong) SettingsViewController *settingsViewController;
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 
@@ -50,25 +52,23 @@ NSUInteger const kCellSpacing = 5;
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"settingsButton"] style:UIBarButtonItemStylePlain target:self action:@selector(openSettings)];
     
     // Title in Navigation Bar
-    self.navigationController.navigationBar.topItem.title = @"miniSHOWS";
-    [self.navigationController.navigationBar setTitleTextAttributes:
-     [NSDictionary dictionaryWithObjectsAndKeys:
-      [UIFont fontWithName:@"Heiti SC" size:14.0],
-      NSFontAttributeName, nil]];
+    self.navigationItem.title = @"miniSHOWS";
+
     
     self.tableView.separatorStyle =UITableViewCellSeparatorStyleNone;
 }
 
 - (void) openSettings
 {
-
+    self.settingsViewController = [[SettingsViewController alloc] initWithNibName:@"SettingsViewController" bundle:[NSBundle mainBundle]];
+    [self.navigationController pushViewController: self.settingsViewController animated:YES];
 }
 
 -(void) openShowView
 {
-    self.svc = [[ShowViewController alloc] initWithNibName:@"ShowViewController" bundle:[NSBundle mainBundle]];
+    self.showViewController = [[ShowViewController alloc] initWithNibName:@"ShowViewController" bundle:[NSBundle mainBundle]];
     
-    [self.navigationController pushViewController:self.svc animated:YES];
+    [self.navigationController pushViewController:self.showViewController animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

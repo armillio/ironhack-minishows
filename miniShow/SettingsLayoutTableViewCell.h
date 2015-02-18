@@ -1,5 +1,5 @@
 //
-//  SettingsLayoutTableViewCell.h
+//  SettingsSwitchTableViewCell.h
 //  miniShow
 //
 //  Created by Jessie Serrino on 2/18/15.
@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface SettingsLayoutTableViewCell : UITableViewCell
+@property (strong, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
 
 @end

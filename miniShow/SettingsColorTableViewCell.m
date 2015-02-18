@@ -8,10 +8,24 @@
 
 #import "SettingsColorTableViewCell.h"
 
+
+IB_DESIGNABLE
+
 @implementation SettingsColorTableViewCell
 
 - (void)awakeFromNib {
     // Initialization code
+    
+    UIView * greenView= [self.segmentedControl.subviews objectAtIndex:0];
+    
+    
+    UIView * yellowView= [self.segmentedControl.subviews objectAtIndex:1];
+    
+    UIImageView *yellowImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"yellowColorSetting"]];
+    
+    UIView * purpleView= [self.segmentedControl.subviews objectAtIndex:2];
+
+
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

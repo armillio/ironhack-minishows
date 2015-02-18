@@ -26,6 +26,12 @@
     self.window.rootViewController = nc;
     
     nc.navigationBar.tintColor = [UIColor colorWithRed:126.0/255.0 green:211.0/255.0 blue:33.0/255.0 alpha:100.0];
+    
+    // Title Font
+    [nc.navigationBar setTitleTextAttributes:
+     [NSDictionary dictionaryWithObjectsAndKeys:
+      [UIFont fontWithName:@"Heiti SC" size:14.0],
+      NSFontAttributeName, nil]];
 
     
     [self.window makeKeyAndVisible];

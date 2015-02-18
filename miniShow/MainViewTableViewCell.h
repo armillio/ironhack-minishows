@@ -11,10 +11,12 @@
 @interface MainViewTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
-@property (weak, nonatomic) IBOutlet UIImageView *iv;
+
 @property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *behindCountLabel;
-@property ( nonatomic) BOOL drawn;
+
+// Do not change: UITableViewCell already uses variable name imageView
+@property (weak, nonatomic) IBOutlet UIImageView *iv;
 
 - (void) adjustCellAppearance;
 

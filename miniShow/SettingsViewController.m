@@ -7,8 +7,11 @@
 //
 
 #import "SettingsViewController.h"
+#import "SettingsColorTableViewCell.h"
+#import "SettingsLayoutTableViewCell.h"
 
 @interface SettingsViewController ()
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -16,12 +19,34 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self updateViewAesthetics];
+    [self initializeTableView];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+
+- (void) initializeTableView
+{
+    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([SettingsLayoutTableViewCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([SettingsLayoutTableViewCell class])];
+    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([SettingsColorTableViewCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([SettingsColorTableViewCell class])];
+    /*[self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([SettingsGeneralTableViewCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([SettingsGeneralTableViewCell class])]; */
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
+}
+
+
+- (void) updateViewAesthetics
+{
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"closeButton"] style:UIBarButtonItemStylePlain target:self action:@selector(closeWindow)];
+
+    // Title in Navigation Bar
+    self.navigationItem.title = @"SETTINGS";
+}
+
+
+- (void) closeWindow
+{
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,24 +59,41 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 #warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return 3;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    
+    NSInteger cellNumber = [indexPath row];
+    UITableViewCell *cell;
+    
+    if(cellNumber == 0)
+    {
+        // Code for SettingsLayoutTableView
+         cell =[tableView dequeueReusableCellWithIdentifier:NSStringFromClass([SettingsLayoutTableViewCell class]) forIndexPath:indexPath];
+    }
+    else
+    {
+        // Code for SettingsColorTableViewCell
+        cell =[tableView dequeueReusableCellWithIdentifier:NSStringFromClass([SettingsColorTableViewCell class]) forIndexPath:indexPath];
+
+    }
+
+    
+    //UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
     
     // Configure the cell...
     
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.
