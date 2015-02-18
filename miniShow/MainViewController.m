@@ -37,6 +37,7 @@ NSString * const kMainShowCellIdentifier = @"MainShowCell";
     self.tableView.delegate = self;
     
     self.tableView.separatorStyle =UITableViewCellSeparatorStyleNone;
+    self.tableView.separatorInset = UIEdgeInsetsMake(10.0f, 0, 10.0f, 0);
 
 }
 
@@ -68,7 +69,7 @@ NSString * const kMainShowCellIdentifier = @"MainShowCell";
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 3;
+    return 10;
 }
 
 
@@ -76,7 +77,7 @@ NSString * const kMainShowCellIdentifier = @"MainShowCell";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     MainViewTableViewCell *cell = (MainViewTableViewCell *)[tableView dequeueReusableCellWithIdentifier:NSStringFromClass([MainViewTableViewCell class]) forIndexPath:indexPath];
     
-    [cell adjustCellAppearance];
+    //[cell adjustCellAppearance];
     
     
     
@@ -93,7 +94,7 @@ NSString * const kMainShowCellIdentifier = @"MainShowCell";
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self openShowView];
+//    [self openShowView];
 }
 
 /*

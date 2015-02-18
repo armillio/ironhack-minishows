@@ -18,33 +18,52 @@ IB_DESIGNABLE
     self.titleLabel.text = @"Breaking Bad";
     self.descriptionLabel.text = @"Season 3 Episode 6";
     self.behindCountLabel.text = @"5 behind";
-    self.contentView.layer.cornerRadius = 20.0f;
-    self.contentView.layer.masksToBounds = YES;
-    UIImage * newImage =  [UIImage imageNamed:@"breaking_bad"];
-    //self.imageView.contentMode = UIView;
-    [self.imageView setImage:newImage];
-    
+    self.imageView.image = [UIImage imageNamed:@"breaking_bad"];
+    self.imageView.clipsToBounds = YES;
 
+    //self.imageView.contentMode = UIView;
 }
 
 - (void)awakeFromNib {
     // Initialization code
     [super awakeFromNib];
+    self.contentView.layer.cornerRadius = 20.0f;
+    self.contentView.layer.masksToBounds = YES;
+    
+    
+    [self adjustCellAppearance];
 
+    
 }
 
 - (void)layoutSubviews
 {
     [super layoutSubviews];
     [self layoutIfNeeded];
-    [self.imageView.layer setCornerRadius:self.imageView.frame.size.height/2];
+    [self.imageView.layer setCornerRadius:self.imageView.frame.size.width/2];
+
 
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+- (void)setHighlighted:(BOOL)highlighted
+{
+    
 }
+
+- (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated
+{
+
+}
+
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated
+{
+
+}
+
+- (void)setSelected:(BOOL)selected
+{
+    
+}
+
 
 @end

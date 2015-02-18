@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *behindCountLabel;
+@property ( nonatomic) BOOL drawn;
 
 - (void) adjustCellAppearance;
 
