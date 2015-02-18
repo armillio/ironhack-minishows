@@ -2,8 +2,8 @@
 //  MainViewController.m
 //  miniShow
 //
-//  Created by Armando on 17/02/15.
-//  Copyright (c) 2015 Armando Carmona. All rights reserved.
+//  Created by Jessie Serrino on 17/02/15.
+//  Copyright (c) 2015 Jessie Serrino. All rights reserved.
 //
 
 #import "MainViewController.h"
@@ -30,21 +30,31 @@ NSUInteger const kCellSpacing = 5;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self initializeTableView];
+    [self updateViewAesthetics];
+}
+
+- (void) initializeTableView
+{
+    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([MainViewTableViewCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([MainViewTableViewCell class])];
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
+}
+
+- (void) updateViewAesthetics
+{
+    // Navigation Controller
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(openShowView)];
     
     
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"settingsButton"] style:UIBarButtonItemStylePlain target:self action:@selector(openSettings)];
-    
-    /* Initializing the tableview */
-    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([MainViewTableViewCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([MainViewTableViewCell class])];
-    self.tableView.dataSource = self;
-    self.tableView.delegate = self;
-    
+    self.navigationController.navigationBar.topItem.title = @"miniSHOWS";
+    [self.navigationController.navigationBar setTitleTextAttributes:
+     [NSDictionary dictionaryWithObjectsAndKeys:
+      [UIFont fontWithName:@"Heiti SC" size:14.0],
+      NSFontAttributeName, nil]];
     
     self.tableView.separatorStyle =UITableViewCellSeparatorStyleNone;
-    
-    
-    self.navigationController.navigationBar.topItem.title = @"miniShow";
 }
 
 - (void) openSettings
