@@ -23,8 +23,10 @@
     MainViewController *mvc = [[MainViewController alloc] init];
     
     UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:mvc];
-    
     self.window.rootViewController = nc;
+    
+    nc.navigationBar.tintColor = [UIColor colorWithRed:126.0/255.0 green:211.0/255.0 blue:33.0/255.0 alpha:100.0];
+
     
     [self.window makeKeyAndVisible];
     return YES;

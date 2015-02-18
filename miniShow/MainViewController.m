@@ -40,9 +40,11 @@ NSUInteger const kCellSpacing = 5;
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     
+    
     self.tableView.separatorStyle =UITableViewCellSeparatorStyleNone;
-    self.tableView.separatorInset = UIEdgeInsetsMake(10.0f, 0, 10.0f, 0);
-
+    
+    
+    self.navigationController.navigationBar.topItem.title = @"miniShow";
 }
 
 - (void) openSettings
@@ -108,7 +110,7 @@ NSUInteger const kCellSpacing = 5;
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    [self openShowView];
+    [self openShowView];
 }
 
 /*

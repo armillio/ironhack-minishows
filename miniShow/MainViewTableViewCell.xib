@@ -8,15 +8,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MainViewTableViewCell" rowHeight="202" id="KGk-i7-Jjw" customClass="MainViewTableViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="354" height="102"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MainViewTableViewCell" rowHeight="203" id="KGk-i7-Jjw" customClass="MainViewTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="354" height="103"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="258" verticalHuggingPriority="258" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="xaj-wB-b77">
-                        <rect key="frame" x="10" y="10" width="81.5" height="81.5"/>
+                        <rect key="frame" x="10" y="10" width="81.5" height="82"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="xaj-wB-b77" secondAttribute="height" multiplier="1:1" id="Vr1-AE-9b2"/>
                         </constraints>
@@ -27,8 +27,8 @@
                             <rect key="frame" x="10" y="10" width="176.5" height="176.5"/>
                         </variation>
                     </imageView>
-                    <label autoresizesSubviews="NO" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7H3-Ux-6MR">
-                        <rect key="frame" x="96.5" y="15" width="98" height="21.5"/>
+                    <label autoresizesSubviews="NO" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Show Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7H3-Ux-6MR">
+                        <rect key="frame" x="96" y="15" width="138" height="21.5"/>
                         <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="21"/>
                         <color key="textColor" red="0.3411764705882353" green="0.3411764705882353" blue="0.3411764705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
@@ -36,14 +36,11 @@
                             <rect key="frame" x="191.5" y="10" width="98" height="149.5"/>
                         </variation>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vra-Qk-y5a">
-                        <rect key="frame" x="96.5" y="39" width="76" height="14"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" misplaced="YES" text="Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vra-Qk-y5a">
+                        <rect key="frame" x="96" y="39" width="76" height="14"/>
                         <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="14"/>
                         <color key="textColor" red="0.44313725490196076" green="0.44313725490196076" blue="0.44313725490196076" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
-                        <variation key="heightClass=compact" misplaced="YES">
-                            <rect key="frame" x="96.5" y="66.5" width="76" height="20"/>
-                        </variation>
                         <variation key="heightClass=regular" misplaced="YES">
                             <rect key="frame" x="75" y="39" width="239" height="14"/>
                         </variation>
@@ -51,8 +48,8 @@
                             <rect key="frame" x="191.5" y="162.5" width="76" height="14"/>
                         </variation>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Behind Count" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JwL-rl-hnC">
-                        <rect key="frame" x="96.5" y="74.5" width="79.5" height="12"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Behind Count" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JwL-rl-hnC">
+                        <rect key="frame" x="96" y="75" width="79.5" height="12"/>
                         <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="12"/>
                         <color key="textColor" red="1" green="0.29803921568627451" blue="0.29803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
@@ -64,6 +61,7 @@
                 <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="vra-Qk-y5a" secondAttribute="trailing" constant="10" id="56z-Gz-qgT"/>
                     <constraint firstItem="JwL-rl-hnC" firstAttribute="top" secondItem="vra-Qk-y5a" secondAttribute="bottom" constant="30" id="5bq-fp-O9a"/>
                     <constraint firstItem="xaj-wB-b77" firstAttribute="bottom" secondItem="JwL-rl-hnC" secondAttribute="bottom" constant="5" id="8AE-HE-awx"/>
                     <constraint firstItem="xaj-wB-b77" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="2" id="8OZ-cf-P2D"/>
@@ -75,32 +73,50 @@
                     <constraint firstItem="vra-Qk-y5a" firstAttribute="bottom" secondItem="xaj-wB-b77" secondAttribute="bottom" constant="-134" id="Mey-fO-fEa">
                         <variation key="heightClass=compact" constant="-5"/>
                     </constraint>
+                    <constraint firstItem="JwL-rl-hnC" firstAttribute="leading" secondItem="vra-Qk-y5a" secondAttribute="trailing" constant="-82.5" id="XG4-9u-uyq">
+                        <variation key="heightClass=compact" constant="10"/>
+                    </constraint>
                     <constraint firstItem="7H3-Ux-6MR" firstAttribute="leading" secondItem="vra-Qk-y5a" secondAttribute="leading" id="atN-4O-zxF"/>
                     <constraint firstItem="vra-Qk-y5a" firstAttribute="top" secondItem="7H3-Ux-6MR" secondAttribute="bottom" constant="3" id="cyV-hM-LWN"/>
+                    <constraint firstItem="JwL-rl-hnC" firstAttribute="leading" secondItem="7H3-Ux-6MR" secondAttribute="trailing" constant="-82.5" id="fTm-Xe-Ggr">
+                        <variation key="heightClass=compact" constant="10"/>
+                    </constraint>
                     <constraint firstAttribute="trailingMargin" secondItem="JwL-rl-hnC" secondAttribute="trailing" constant="146.5" id="hdj-oK-CXz">
                         <variation key="heightClass=compact" constant="5"/>
                     </constraint>
                     <constraint firstItem="7H3-Ux-6MR" firstAttribute="leading" secondItem="xaj-wB-b77" secondAttribute="trailing" constant="5" id="jqu-zl-hm3"/>
                     <constraint firstAttribute="bottomMargin" secondItem="xaj-wB-b77" secondAttribute="bottom" constant="2" id="kfd-lC-j3C"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="7H3-Ux-6MR" secondAttribute="trailing" constant="10" id="nIP-17-btv"/>
                     <constraint firstItem="7H3-Ux-6MR" firstAttribute="leading" secondItem="JwL-rl-hnC" secondAttribute="leading" id="sFm-ho-jso"/>
+                    <constraint firstItem="JwL-rl-hnC" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="xaj-wB-b77" secondAttribute="trailing" constant="113" id="uM7-1b-lTu">
+                        <variation key="heightClass=compact" constant="10"/>
+                    </constraint>
                 </constraints>
                 <variation key="default">
                     <mask key="constraints">
                         <exclude reference="Mey-fO-fEa"/>
                         <exclude reference="5bq-fp-O9a"/>
                         <exclude reference="Ikv-KD-l9r"/>
+                        <exclude reference="XG4-9u-uyq"/>
+                        <exclude reference="fTm-Xe-Ggr"/>
                         <exclude reference="hdj-oK-CXz"/>
+                        <exclude reference="uM7-1b-lTu"/>
                     </mask>
                 </variation>
                 <variation key="heightClass=compact">
                     <mask key="constraints">
                         <exclude reference="8AE-HE-awx"/>
+                        <exclude reference="nIP-17-btv"/>
                         <exclude reference="sFm-ho-jso"/>
+                        <exclude reference="56z-Gz-qgT"/>
                         <include reference="Mey-fO-fEa"/>
                         <exclude reference="cyV-hM-LWN"/>
                         <exclude reference="5bq-fp-O9a"/>
                         <include reference="Ikv-KD-l9r"/>
+                        <include reference="XG4-9u-uyq"/>
+                        <include reference="fTm-Xe-Ggr"/>
                         <include reference="hdj-oK-CXz"/>
+                        <include reference="uM7-1b-lTu"/>
                     </mask>
                 </variation>
                 <variation key="heightClass=regular">
@@ -116,7 +132,7 @@
                 <outlet property="iv" destination="xaj-wB-b77" id="hNF-8F-4EC"/>
                 <outlet property="titleLabel" destination="7H3-Ux-6MR" id="2en-Tv-DaI"/>
             </connections>
-            <point key="canvasLocation" x="598" y="441"/>
+            <point key="canvasLocation" x="598" y="441.5"/>
         </tableViewCell>
     </objects>
 </document>
