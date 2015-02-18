@@ -42,12 +42,28 @@
     self.showImageHeight = self.showImage.frame.size.height;
     self.scrollCounter = self.showImageHeight;
     
+    self.navigationController.navigationBar.titleTextAttributes = @{ NSFontAttributeName : [UIFont fontWithName:@"Heiti SC" size:18.0],
+                                                                     NSStrokeColorAttributeName : [UIColor colorWithRed:113.0 green:113.0 blue:113.0 alpha:1.0]};
+    //Change for the real value
     self.title = @"Breaking Bad";
-    
-    //NSAttributedString *attributedTitle;
-    
+
     self.statusPlusnavigation = self.navigationController.navigationBar.frame.size.height +  [UIApplication sharedApplication].statusBarFrame.size.height;
     
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"backButton"]
+                                                                             style:UIBarButtonItemStylePlain
+                                                                            target:self
+                                                                            action:@selector(goBackToMainView)];
+    
+    // Change when we get what funcionality this window will do
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"menuButton"]
+                                                                             style:UIBarButtonItemStylePlain
+                                                                            target:self
+                                                                            action:nil];
+}
+
+-(void) goBackToMainView
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 -(void) scrollViewDidScroll:(UIScrollView *)scrollView
