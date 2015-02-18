@@ -16,8 +16,14 @@
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *showButtonBarConstrait;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *showImageConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *showImageWidthConstraint;
 
 @property (weak, nonatomic) IBOutlet UIImageView *showImage;
+
+@property (assign, nonatomic) CGFloat initialImageConstraintValue;
+@property (assign, nonatomic) CGFloat actualImageConstraintValue;
+
+@property (assign, nonatomic) CGFloat scrollCounter;
 
 @end
 
@@ -27,41 +33,43 @@
     [super viewDidLoad];
     
     self.showScrollView.delegate = self;
+    
+    self.scrollCounter = 240;
 }
 
 -(void) scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    // 176
-    // 138
-    
-    // 240
     if(self.showScrollView.contentOffset.y > 138)
     {
-        [self.showButtonBarConstrait setConstant:self.showScrollView.contentOffset.y - 176];
+        [self.showButtonBarConstrait setConstant:self.showScrollView.contentOffset.y - 176.0];
     }else
     {
-        [self.showButtonBarConstrait setConstant:-38];
+        [self.showButtonBarConstrait setConstant: -38];
     }
     
-    if(self.showScrollView.contentOffset.y < -64)
+    if(self.showScrollView.contentOffset.y <= -64)
     {
-        [self.showImageConstraint setConstant:240 * -(self.showScrollView.contentOffset.y / 120)];
+        [self.showImageConstraint setConstant:self.scrollCounter];
+        self.scrollCounter++;
         
-        //self.showImage.frame = CGRectMake(self.showImage.frame.origin.x, self.showImage.frame.origin.y, self.showImage.frame.size.width, self.showImage.frame.size.height - (self.showScrollView.contentOffset.y / 128));
-        
-    }else
-    {
-        [self.showImageConstraint setConstant:240];
+        if(self.showScrollView.contentOffset.y <= -65)
+        {
+            [self.view layoutIfNeeded];
+
+        }
     }
-    
-    [self.view layoutIfNeeded ];
 }
 
--(void)viewDidLayoutSubviews
+- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset
 {
-    [super viewDidLayoutSubviews];
-    [self.view layoutIfNeeded ];
+    [self.showImageConstraint setConstant:240];
+    self.scrollCounter = 240;
+    [self.view layoutIfNeeded];
+}
 
+-(BOOL)shouldAutorotate
+{
+    return NO;
 }
 
 @end
