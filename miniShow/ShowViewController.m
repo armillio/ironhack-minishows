@@ -47,7 +47,7 @@
     //NSAttributedString *attributedTitle;
     
     self.statusPlusnavigation = self.navigationController.navigationBar.frame.size.height +  [UIApplication sharedApplication].statusBarFrame.size.height;
-
+    
 }
 
 -(void) scrollViewDidScroll:(UIScrollView *)scrollView
