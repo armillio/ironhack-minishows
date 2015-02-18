@@ -12,6 +12,7 @@
                 <outlet property="showContent" destination="tfe-1i-BDE" id="ob9-OM-9uD"/>
                 <outlet property="showImage" destination="nIl-yf-o5W" id="ggZ-jp-xZE"/>
                 <outlet property="showImageConstraint" destination="Nix-Vl-0Nx" id="5KU-af-lPC"/>
+                <outlet property="showImageWidthConstraint" destination="7fN-rE-6Qa" id="uHL-3W-MEm"/>
                 <outlet property="showScrollView" destination="mnq-zh-btc" id="Z4W-RE-hCh"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -66,16 +67,8 @@
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WcQ-DL-3VF" userLabel="shareIcon">
                                     <rect key="frame" x="405" y="6" width="30" height="25"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" secondItem="WcQ-DL-3VF" secondAttribute="height" multiplier="9:5" id="g29-0W-oud"/>
-                                    </constraints>
                                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
                                     <state key="normal" image="shareButton"/>
-                                    <variation key="default">
-                                        <mask key="constraints">
-                                            <exclude reference="g29-0W-oud"/>
-                                        </mask>
-                                    </variation>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fJI-gc-PMo" userLabel="infoIcon">
                                     <rect key="frame" x="285" y="6" width="30" height="25"/>
@@ -93,23 +86,14 @@
                                 <constraint firstItem="gZB-2P-1p5" firstAttribute="width" secondItem="fJI-gc-PMo" secondAttribute="width" id="FNS-rf-YRL"/>
                                 <constraint firstItem="WcQ-DL-3VF" firstAttribute="leading" secondItem="fJI-gc-PMo" secondAttribute="trailing" priority="250" constant="90" id="FNU-xd-jgw"/>
                                 <constraint firstItem="WcQ-DL-3VF" firstAttribute="top" secondItem="5OT-FN-e1i" secondAttribute="top" constant="6" id="KOP-Jf-Bhu"/>
-                                <constraint firstAttribute="bottom" secondItem="WcQ-DL-3VF" secondAttribute="bottom" constant="7" id="NXl-zY-QVs"/>
                                 <constraint firstItem="fJI-gc-PMo" firstAttribute="width" secondItem="WcQ-DL-3VF" secondAttribute="width" id="RqH-cf-pjh"/>
                                 <constraint firstAttribute="centerX" secondItem="fJI-gc-PMo" secondAttribute="centerX" id="VLY-r2-Oat"/>
                                 <constraint firstItem="fJI-gc-PMo" firstAttribute="leading" secondItem="gZB-2P-1p5" secondAttribute="trailing" priority="250" constant="90" id="WO6-sd-krw"/>
                                 <constraint firstItem="fJI-gc-PMo" firstAttribute="height" secondItem="WcQ-DL-3VF" secondAttribute="height" id="Y07-y1-LrU"/>
-                                <constraint firstAttribute="bottom" secondItem="fJI-gc-PMo" secondAttribute="bottom" constant="7" id="c2G-X1-bGY"/>
-                                <constraint firstAttribute="bottom" secondItem="gZB-2P-1p5" secondAttribute="bottom" constant="7" id="hSN-7o-p0W"/>
                                 <constraint firstAttribute="height" constant="38" id="mXA-gc-LuU"/>
+                                <constraint firstItem="fJI-gc-PMo" firstAttribute="height" secondItem="WcQ-DL-3VF" secondAttribute="height" id="rtb-cL-nkK"/>
                                 <constraint firstItem="gZB-2P-1p5" firstAttribute="height" secondItem="fJI-gc-PMo" secondAttribute="height" id="tN3-M5-ZHI"/>
                             </constraints>
-                            <variation key="default">
-                                <mask key="constraints">
-                                    <exclude reference="hSN-7o-p0W"/>
-                                    <exclude reference="c2G-X1-bGY"/>
-                                    <exclude reference="NXl-zY-QVs"/>
-                                </mask>
-                            </variation>
                         </view>
                     </subviews>
                     <constraints>
