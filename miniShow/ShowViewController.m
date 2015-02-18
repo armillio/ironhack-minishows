@@ -8,7 +8,16 @@
 
 #import "ShowViewController.h"
 
-@interface ShowViewController ()
+@interface ShowViewController () <UIScrollViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UIScrollView *showScrollView;
+@property (weak, nonatomic) IBOutlet UIView *showButtonBar;
+@property (weak, nonatomic) IBOutlet UITextView *showContent;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *showButtonBarConstrait;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *showImageConstraint;
+
+@property (weak, nonatomic) IBOutlet UIImageView *showImage;
 
 @end
 
@@ -16,22 +25,43 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    self.showScrollView.delegate = self;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void) scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    // 176
+    // 138
+    
+    // 240
+    if(self.showScrollView.contentOffset.y > 138)
+    {
+        [self.showButtonBarConstrait setConstant:self.showScrollView.contentOffset.y - 176];
+    }else
+    {
+        [self.showButtonBarConstrait setConstant:-38];
+    }
+    
+    if(self.showScrollView.contentOffset.y < -64)
+    {
+        [self.showImageConstraint setConstant:240 * -(self.showScrollView.contentOffset.y / 120)];
+        
+        //self.showImage.frame = CGRectMake(self.showImage.frame.origin.x, self.showImage.frame.origin.y, self.showImage.frame.size.width, self.showImage.frame.size.height - (self.showScrollView.contentOffset.y / 128));
+        
+    }else
+    {
+        [self.showImageConstraint setConstant:240];
+    }
+    
+    [self.view layoutIfNeeded ];
 }
 
-/*
-#pragma mark - Navigation
+-(void)viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
+    [self.view layoutIfNeeded ];
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
 }
-*/
 
 @end
