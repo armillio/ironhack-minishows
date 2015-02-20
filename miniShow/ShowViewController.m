@@ -10,7 +10,6 @@
 
 @interface ShowViewController () <UIScrollViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UIScrollView *showScrollView;
 @property (weak, nonatomic) IBOutlet UIView *showButtonBar;
 @property (weak, nonatomic) IBOutlet UITextView *showContent;
 
@@ -36,6 +35,9 @@
 @property (assign, nonatomic) CGFloat systemPositionHeight;
 
 @end
+
+static NSString *const generalInfoTitle = @"General Info";
+static NSString *const overviewTitle = @"Overview";
 
 @implementation ShowViewController
 
@@ -74,6 +76,10 @@
                                                                              style:UIBarButtonItemStylePlain
                                                                             target:self
                                                                             action:nil];
+    
+    // Dummy data
+    self.generalInfoContent = @"Now that there is the Tec-9, a crappy spray gun from South Miami. This gun is advertised as the most popular gun in American crime. Do you believe that shit? It actually says that in the little book that comes with it: the most popular gun in American crime. Like they're actually proud of that shit.";
+    self.overviewContent = @"Normally, both your asses would be dead as fucking fried chicken, but you happen to pull this shit while I'm in a transitional period so I don't wanna kill you, I wanna help you. But I can't give you this case, it don't belong to me. Besides, I've already been through too much shit this morning over this case to hand it over to your dumb ass.";
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -85,39 +91,37 @@
 
 -(void) makeTheTextViewPretty
 {
-    NSString *generalInfoTitle = @"General Info";
-    NSString *generalInfoContent = @"Now that there is the Tec-9, a crappy spray gun from South Miami. This gun is advertised as the most popular gun in American crime. Do you believe that shit? It actually says that in the little book that comes with it: the most popular gun in American crime. Like they're actually proud of that shit.";
-    NSString *overviewTitle = @"Overview";
-    NSString *overviewContent = @"Normally, both your asses would be dead as fucking fried chicken, but you happen to pull this shit while I'm in a transitional period so I don't wanna kill you, I wanna help you. But I can't give you this case, it don't belong to me. Besides, I've already been through too much shit this morning over this case to hand it over to your dumb ass.";
-    
-    NSRange generalInfoTitleRange = [[NSString stringWithFormat:@"%@\n\n%@\n\n%@\n\n%@",
-                                      generalInfoTitle,generalInfoContent,
-                                      overviewTitle, overviewContent]
-                                     rangeOfString:generalInfoTitle
-                                     options:NSBackwardsSearch];
-    
-    NSRange overviewTitleRange = [[NSString stringWithFormat:@"%@\n\n%@\n\n%@\n\n%@",
-                                   generalInfoTitle,generalInfoContent,
-                                   overviewTitle, overviewContent]
-                                  rangeOfString:overviewTitle
-                                  options:NSBackwardsSearch];
-    
     NSMutableAttributedString *grupedShowContent = [[NSMutableAttributedString alloc]
-                                                    initWithString: [NSString stringWithFormat:@"%@\n\n%@\n\n%@\n\n%@", generalInfoTitle, generalInfoContent, overviewTitle, overviewContent]
+                                                    initWithString: [NSString stringWithFormat:@"%@\n\n%@\n\n%@\n\n%@",
+                                                                     generalInfoTitle,
+                                                                     self.generalInfoContent,
+                                                                     overviewTitle,
+                                                                     self.overviewContent]
                                                     attributes:@{ NSFontAttributeName : [UIFont fontWithName:@"Heiti SC" size:20],
                                                                   NSForegroundColorAttributeName: [UIColor colorWithRed:113.0/255.0
                                                                                                                   green:113.0/255.0
                                                                                                                    blue:113.0/255.0
                                                                                                                   alpha:1.0]}];
-    
+    // Make the title headers Bigger
     [grupedShowContent addAttribute:NSFontAttributeName
                               value:[UIFont fontWithName:@"Heiti SC" size:28]
-                              range:generalInfoTitleRange];
+                              range:[self getRangeFromTitleWithString:generalInfoTitle]];
     [grupedShowContent addAttribute:NSFontAttributeName
                               value:[UIFont fontWithName:@"Heiti SC" size:28]
-                              range:overviewTitleRange];
+                              range:[self getRangeFromTitleWithString:overviewTitle]];
     
     self.showContent.attributedText = grupedShowContent;
+}
+
+-(NSRange) getRangeFromTitleWithString:(NSString *)searchString
+{
+    NSRange returnRange = [[NSString stringWithFormat:@"%@\n\n%@\n\n%@\n\n%@",
+                                      generalInfoTitle,self.generalInfoContent,
+                                      overviewTitle, self.overviewContent]
+                                     rangeOfString:searchString
+                                     options:NSBackwardsSearch];
+
+    return returnRange;
 }
 
 -(void) goBackToMainView
@@ -139,11 +143,6 @@
     {
         [self.showImageConstraint setConstant:self.scrollCounter];
         self.scrollCounter++;
-
-        /*if(self.showScrollView.contentOffset.y != -(self.systemPositionHeight))
-        {
-            //[self.view layoutIfNeeded];
-        }*/
     }
 }
 
@@ -167,25 +166,6 @@
     }];
     
 }
-/*-(void)willTransitionToTraitCollection:(UITraitCollection *)newCollection withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator
-{
-    if(newCollection.horizontalSizeClass == 1)
-    {
-        self.navigationBarHeight = self.navigationController.navigationBar.frame.size.height;
-        self.calculateBarPosition = self.showImageHeight - self.showButtonBarHeight - self.navigationBarHeight;
-        self.calculateImagePosition = self.showImageHeight - self.navigationBarHeight;
-        self.showImageHeight = self.showImage.frame.size.height;
-        self.systemPositionHeight = self.navigationBarHeight;
-
-    }else if(newCollection.horizontalSizeClass == 1)
-    {
-        self.navigationBarHeight = self.navigationController.navigationBar.frame.size.height;
-        self.calculateBarPosition = self.showImageHeight - self.showButtonBarHeight - self.navigationBarHeight  - self.statusBarHeight;
-        self.calculateImagePosition = self.showImageHeight - self.navigationBarHeight - self.statusBarHeight;
-        self.showImageHeight = self.showImage.frame.size.height;
-        self.systemPositionHeight = self.navigationBarHeight - self.statusBarHeight;
-    }
-}*/
 
 -(UIInterfaceOrientation)preferredInterfaceOrientationForPresentation
 {
