@@ -20,6 +20,9 @@
 		4751DEC71A938F7900A224E2 /* ShowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4751DEC11A938F7900A224E2 /* ShowViewController.xib */; };
 		9100B1BD1A9754F500942064 /* SettingsLayoutTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9100B1BB1A9754F500942064 /* SettingsLayoutTableViewCell.m */; };
 		9100B1BE1A9754F500942064 /* SettingsLayoutTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9100B1BC1A9754F500942064 /* SettingsLayoutTableViewCell.xib */; };
+		9100B1C41A97709600942064 /* SettingsGenericTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9100B1C21A97709600942064 /* SettingsGenericTableViewCell.m */; };
+		9100B1C51A97709600942064 /* SettingsGenericTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9100B1C31A97709600942064 /* SettingsGenericTableViewCell.xib */; };
+		9100B1C71A97791E00942064 /* SettingsFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9100B1C61A97791E00942064 /* SettingsFooterView.xib */; };
 		9131FDC61A94F7A100212927 /* SettingsColorTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9131FDC41A94F7A100212927 /* SettingsColorTableViewCell.m */; };
 		9131FDC71A94F7A100212927 /* SettingsColorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9131FDC51A94F7A100212927 /* SettingsColorTableViewCell.xib */; };
 		91601F691A939893002BC22D /* MainViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91601F671A939893002BC22D /* MainViewTableViewCell.m */; };
@@ -60,6 +63,10 @@
 		9100B1BA1A9754F500942064 /* SettingsLayoutTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsLayoutTableViewCell.h; sourceTree = "<group>"; };
 		9100B1BB1A9754F500942064 /* SettingsLayoutTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsLayoutTableViewCell.m; sourceTree = "<group>"; };
 		9100B1BC1A9754F500942064 /* SettingsLayoutTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsLayoutTableViewCell.xib; sourceTree = "<group>"; };
+		9100B1C11A97709600942064 /* SettingsGenericTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsGenericTableViewCell.h; sourceTree = "<group>"; };
+		9100B1C21A97709600942064 /* SettingsGenericTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsGenericTableViewCell.m; sourceTree = "<group>"; };
+		9100B1C31A97709600942064 /* SettingsGenericTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsGenericTableViewCell.xib; sourceTree = "<group>"; };
+		9100B1C61A97791E00942064 /* SettingsFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsFooterView.xib; sourceTree = "<group>"; };
 		9131FDC41A94F7A100212927 /* SettingsColorTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsColorTableViewCell.m; sourceTree = "<group>"; };
 		9131FDC51A94F7A100212927 /* SettingsColorTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsColorTableViewCell.xib; sourceTree = "<group>"; };
 		91601F661A939893002BC22D /* MainViewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewTableViewCell.h; sourceTree = "<group>"; };
@@ -172,13 +179,33 @@
 			name = Show;
 			sourceTree = "<group>";
 		};
-		9131FDBB1A94F6DC00212927 /* Settings */ = {
+		9100B1BF1A976DBA00942064 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				9100B1C11A97709600942064 /* SettingsGenericTableViewCell.h */,
+				9100B1C21A97709600942064 /* SettingsGenericTableViewCell.m */,
 				9100B1B61A974C1D00942064 /* SettingsColorTableViewCell.h */,
 				9131FDC41A94F7A100212927 /* SettingsColorTableViewCell.m */,
 				9100B1BA1A9754F500942064 /* SettingsLayoutTableViewCell.h */,
 				9100B1BB1A9754F500942064 /* SettingsLayoutTableViewCell.m */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		9100B1C01A976E5300942064 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				9100B1BC1A9754F500942064 /* SettingsLayoutTableViewCell.xib */,
+				9131FDC51A94F7A100212927 /* SettingsColorTableViewCell.xib */,
+				9100B1C31A97709600942064 /* SettingsGenericTableViewCell.xib */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		9131FDBB1A94F6DC00212927 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				9100B1BF1A976DBA00942064 /* Cells */,
 				4751DEBC1A938F7900A224E2 /* SettingsViewController.h */,
 				4751DEBD1A938F7900A224E2 /* SettingsViewController.m */,
 			);
@@ -199,9 +226,9 @@
 		9131FDBD1A94F71B00212927 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				9131FDC51A94F7A100212927 /* SettingsColorTableViewCell.xib */,
+				9100B1C01A976E5300942064 /* Cells */,
 				4751DEBE1A938F7900A224E2 /* SettingsViewController.xib */,
-				9100B1BC1A9754F500942064 /* SettingsLayoutTableViewCell.xib */,
+				9100B1C61A97791E00942064 /* SettingsFooterView.xib */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -297,11 +324,13 @@
 			files = (
 				4751DEC71A938F7900A224E2 /* ShowViewController.xib in Resources */,
 				4751DEA21A938EF400A224E2 /* LaunchScreen.xib in Resources */,
+				9100B1C51A97709600942064 /* SettingsGenericTableViewCell.xib in Resources */,
 				9100B1BE1A9754F500942064 /* SettingsLayoutTableViewCell.xib in Resources */,
 				91601F6A1A939893002BC22D /* MainViewTableViewCell.xib in Resources */,
 				4751DE9F1A938EF400A224E2 /* Images.xcassets in Resources */,
 				9131FDC71A94F7A100212927 /* SettingsColorTableViewCell.xib in Resources */,
 				4751DEC31A938F7900A224E2 /* MainViewController.xib in Resources */,
+				9100B1C71A97791E00942064 /* SettingsFooterView.xib in Resources */,
 				4751DEC51A938F7900A224E2 /* SettingsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -323,6 +352,7 @@
 				4751DE971A938EF400A224E2 /* AppDelegate.m in Sources */,
 				4751DEC41A938F7900A224E2 /* SettingsViewController.m in Sources */,
 				9100B1BD1A9754F500942064 /* SettingsLayoutTableViewCell.m in Sources */,
+				9100B1C41A97709600942064 /* SettingsGenericTableViewCell.m in Sources */,
 				9131FDC61A94F7A100212927 /* SettingsColorTableViewCell.m in Sources */,
 				4751DE941A938EF400A224E2 /* main.m in Sources */,
 				4751DEC21A938F7900A224E2 /* MainViewController.m in Sources */,

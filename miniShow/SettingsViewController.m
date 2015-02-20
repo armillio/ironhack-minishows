@@ -9,10 +9,20 @@
 #import "SettingsViewController.h"
 #import "SettingsColorTableViewCell.h"
 #import "SettingsLayoutTableViewCell.h"
+#import "SettingsGenericTableViewCell.h"
+#import "MainViewTableViewCell.h"
+
+static NSInteger const kCellCount = 7;
+
+typedef enum : NSUInteger {
+    LayoutPickType = 0,
+    ColorPickCellType,
+    GenericCellType
+} CellTypes;
 
 @interface SettingsViewController ()
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
-
+@property (strong, nonatomic) NSArray *genericCellTitles;
 @end
 
 @implementation SettingsViewController
@@ -21,7 +31,7 @@
     [super viewDidLoad];
     [self updateViewAesthetics];
     [self initializeTableView];
-    
+    [self prepareGenericCells];
 }
 
 
@@ -29,9 +39,16 @@
 {
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([SettingsLayoutTableViewCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([SettingsLayoutTableViewCell class])];
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([SettingsColorTableViewCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([SettingsColorTableViewCell class])];
-    /*[self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([SettingsGeneralTableViewCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([SettingsGeneralTableViewCell class])]; */
+
+    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([SettingsGenericTableViewCell class]) bundle:nil]
+     forCellReuseIdentifier:NSStringFromClass([SettingsGenericTableViewCell class])];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
+    
+    
+    UIView *rootView = [[[NSBundle mainBundle] loadNibNamed:@"SettingsFooterView" owner:self options:nil] objectAtIndex:0];
+        
+    [rootView setCenter:self.view.center];
 }
 
 
@@ -41,6 +58,15 @@
 
     // Title in Navigation Bar
     self.navigationItem.title = @"SETTINGS";
+}
+
+- (void) prepareGenericCells
+{
+    self.genericCellTitles = @[@"Tinted Background",
+                               @"Next Episode Sorting",
+                               @"Last Episode Sorting",
+                               @"Alphabetical Sorting",
+                               @"Badge App Icon"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -59,7 +85,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 100;
+    return kCellCount;
 }
 
 
@@ -68,22 +94,25 @@
     NSInteger cellNumber = [indexPath row];
     UITableViewCell *cell;
     
-    if(cellNumber == 0)
+    if(cellNumber == LayoutPickType)
     {
         // Code for SettingsLayoutTableView
          cell =[tableView dequeueReusableCellWithIdentifier:NSStringFromClass([SettingsLayoutTableViewCell class]) forIndexPath:indexPath];
     }
-    else
+    else if(cellNumber == ColorPickCellType)
     {
         // Code for SettingsColorTableViewCell
         cell =[tableView dequeueReusableCellWithIdentifier:NSStringFromClass([SettingsColorTableViewCell class]) forIndexPath:indexPath];
 
     }
-
-    
-    //UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
+    else
+    {
+        cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([SettingsGenericTableViewCell class]) forIndexPath:indexPath];
+        SettingsGenericTableViewCell *c = (SettingsGenericTableViewCell*) cell;
+        NSInteger index = cellNumber - 2;
+        [c setLabelText:self.genericCellTitles[index]];
+        
+    }
     
     return cell;
 }
@@ -92,6 +121,8 @@
 {
     [self.navigationController popViewControllerAnimated:YES];
 }
+
+
 
 
 
