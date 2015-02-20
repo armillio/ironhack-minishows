@@ -18,11 +18,10 @@
 		4751DEC51A938F7900A224E2 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4751DEBE1A938F7900A224E2 /* SettingsViewController.xib */; };
 		4751DEC61A938F7900A224E2 /* ShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4751DEC01A938F7900A224E2 /* ShowViewController.m */; };
 		4751DEC71A938F7900A224E2 /* ShowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4751DEC11A938F7900A224E2 /* ShowViewController.xib */; };
-		9131FDC11A94F75C00212927 /* SettingsLayoutTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9131FDBF1A94F75C00212927 /* SettingsLayoutTableViewCell.m */; };
-		9131FDC21A94F75C00212927 /* SettingsLayoutTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9131FDC01A94F75C00212927 /* SettingsLayoutTableViewCell.xib */; };
+		9100B1BD1A9754F500942064 /* SettingsLayoutTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9100B1BB1A9754F500942064 /* SettingsLayoutTableViewCell.m */; };
+		9100B1BE1A9754F500942064 /* SettingsLayoutTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9100B1BC1A9754F500942064 /* SettingsLayoutTableViewCell.xib */; };
 		9131FDC61A94F7A100212927 /* SettingsColorTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9131FDC41A94F7A100212927 /* SettingsColorTableViewCell.m */; };
 		9131FDC71A94F7A100212927 /* SettingsColorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9131FDC51A94F7A100212927 /* SettingsColorTableViewCell.xib */; };
-		9131FDCB1A9520FE00212927 /* SettingsLayoutButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9131FDCA1A9520FE00212927 /* SettingsLayoutButtonView.m */; };
 		91601F691A939893002BC22D /* MainViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91601F671A939893002BC22D /* MainViewTableViewCell.m */; };
 		91601F6A1A939893002BC22D /* MainViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91601F681A939893002BC22D /* MainViewTableViewCell.xib */; };
 /* End PBXBuildFile section */
@@ -57,14 +56,12 @@
 		4751DEBF1A938F7900A224E2 /* ShowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowViewController.h; sourceTree = "<group>"; };
 		4751DEC01A938F7900A224E2 /* ShowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowViewController.m; sourceTree = "<group>"; };
 		4751DEC11A938F7900A224E2 /* ShowViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShowViewController.xib; sourceTree = "<group>"; };
-		9131FDBE1A94F75C00212927 /* SettingsLayoutTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsLayoutTableViewCell.h; sourceTree = "<group>"; };
-		9131FDBF1A94F75C00212927 /* SettingsLayoutTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsLayoutTableViewCell.m; sourceTree = "<group>"; };
-		9131FDC01A94F75C00212927 /* SettingsLayoutTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsLayoutTableViewCell.xib; sourceTree = "<group>"; };
-		9131FDC31A94F7A100212927 /* SettingsColorTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsColorTableViewCell.h; sourceTree = "<group>"; };
+		9100B1B61A974C1D00942064 /* SettingsColorTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsColorTableViewCell.h; sourceTree = "<group>"; };
+		9100B1BA1A9754F500942064 /* SettingsLayoutTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsLayoutTableViewCell.h; sourceTree = "<group>"; };
+		9100B1BB1A9754F500942064 /* SettingsLayoutTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsLayoutTableViewCell.m; sourceTree = "<group>"; };
+		9100B1BC1A9754F500942064 /* SettingsLayoutTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsLayoutTableViewCell.xib; sourceTree = "<group>"; };
 		9131FDC41A94F7A100212927 /* SettingsColorTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsColorTableViewCell.m; sourceTree = "<group>"; };
 		9131FDC51A94F7A100212927 /* SettingsColorTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsColorTableViewCell.xib; sourceTree = "<group>"; };
-		9131FDC91A9520FE00212927 /* SettingsLayoutButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsLayoutButtonView.h; sourceTree = "<group>"; };
-		9131FDCA1A9520FE00212927 /* SettingsLayoutButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsLayoutButtonView.m; sourceTree = "<group>"; };
 		91601F661A939893002BC22D /* MainViewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewTableViewCell.h; sourceTree = "<group>"; };
 		91601F671A939893002BC22D /* MainViewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewTableViewCell.m; sourceTree = "<group>"; };
 		91601F681A939893002BC22D /* MainViewTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewTableViewCell.xib; sourceTree = "<group>"; };
@@ -178,12 +175,12 @@
 		9131FDBB1A94F6DC00212927 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				9100B1B61A974C1D00942064 /* SettingsColorTableViewCell.h */,
+				9131FDC41A94F7A100212927 /* SettingsColorTableViewCell.m */,
+				9100B1BA1A9754F500942064 /* SettingsLayoutTableViewCell.h */,
+				9100B1BB1A9754F500942064 /* SettingsLayoutTableViewCell.m */,
 				4751DEBC1A938F7900A224E2 /* SettingsViewController.h */,
 				4751DEBD1A938F7900A224E2 /* SettingsViewController.m */,
-				9131FDBE1A94F75C00212927 /* SettingsLayoutTableViewCell.h */,
-				9131FDBF1A94F75C00212927 /* SettingsLayoutTableViewCell.m */,
-				9131FDC31A94F7A100212927 /* SettingsColorTableViewCell.h */,
-				9131FDC41A94F7A100212927 /* SettingsColorTableViewCell.m */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -202,11 +199,9 @@
 		9131FDBD1A94F71B00212927 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				9131FDC91A9520FE00212927 /* SettingsLayoutButtonView.h */,
-				9131FDCA1A9520FE00212927 /* SettingsLayoutButtonView.m */,
 				9131FDC51A94F7A100212927 /* SettingsColorTableViewCell.xib */,
-				9131FDC01A94F75C00212927 /* SettingsLayoutTableViewCell.xib */,
 				4751DEBE1A938F7900A224E2 /* SettingsViewController.xib */,
+				9100B1BC1A9754F500942064 /* SettingsLayoutTableViewCell.xib */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -302,11 +297,11 @@
 			files = (
 				4751DEC71A938F7900A224E2 /* ShowViewController.xib in Resources */,
 				4751DEA21A938EF400A224E2 /* LaunchScreen.xib in Resources */,
+				9100B1BE1A9754F500942064 /* SettingsLayoutTableViewCell.xib in Resources */,
 				91601F6A1A939893002BC22D /* MainViewTableViewCell.xib in Resources */,
 				4751DE9F1A938EF400A224E2 /* Images.xcassets in Resources */,
 				9131FDC71A94F7A100212927 /* SettingsColorTableViewCell.xib in Resources */,
 				4751DEC31A938F7900A224E2 /* MainViewController.xib in Resources */,
-				9131FDC21A94F75C00212927 /* SettingsLayoutTableViewCell.xib in Resources */,
 				4751DEC51A938F7900A224E2 /* SettingsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -326,13 +321,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				4751DE971A938EF400A224E2 /* AppDelegate.m in Sources */,
-				9131FDCB1A9520FE00212927 /* SettingsLayoutButtonView.m in Sources */,
 				4751DEC41A938F7900A224E2 /* SettingsViewController.m in Sources */,
+				9100B1BD1A9754F500942064 /* SettingsLayoutTableViewCell.m in Sources */,
 				9131FDC61A94F7A100212927 /* SettingsColorTableViewCell.m in Sources */,
 				4751DE941A938EF400A224E2 /* main.m in Sources */,
 				4751DEC21A938F7900A224E2 /* MainViewController.m in Sources */,
 				4751DEC61A938F7900A224E2 /* ShowViewController.m in Sources */,
-				9131FDC11A94F75C00212927 /* SettingsLayoutTableViewCell.m in Sources */,
 				91601F691A939893002BC22D /* MainViewTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

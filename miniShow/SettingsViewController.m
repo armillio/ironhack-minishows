@@ -37,16 +37,10 @@
 
 - (void) updateViewAesthetics
 {
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"closeButton"] style:UIBarButtonItemStylePlain target:self action:@selector(closeWindow)];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"closeButton"] style:UIBarButtonItemStylePlain target:self action:@selector(goBackToMainView)];
 
     // Title in Navigation Bar
     self.navigationItem.title = @"SETTINGS";
-}
-
-
-- (void) closeWindow
-{
-
 }
 
 - (void)didReceiveMemoryWarning {
@@ -65,7 +59,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 3;
+    return 100;
 }
 
 
@@ -93,6 +87,13 @@
     
     return cell;
 }
+
+-(void) goBackToMainView
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+
 
 
 /*

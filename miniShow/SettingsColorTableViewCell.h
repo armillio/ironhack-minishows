@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface SettingsColorTableViewCell : UITableViewCell
-@property (strong, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
+@property (strong, nonatomic) UISegmentedControl *segmentedControl;
 
 @end

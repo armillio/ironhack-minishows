@@ -9,23 +9,42 @@
 #import "SettingsColorTableViewCell.h"
 
 
+static NSInteger const kGreenButton = 0;
+static NSInteger const kYellowButton = 1;
+static NSInteger const kPurpleButton = 2;
+
+
+
 IB_DESIGNABLE
 
 @implementation SettingsColorTableViewCell
 
 - (void)awakeFromNib {
     // Initialization code
-    
-    UIView * greenView= [self.segmentedControl.subviews objectAtIndex:0];
-    
-    
-    UIView * yellowView= [self.segmentedControl.subviews objectAtIndex:1];
-    
-    UIImageView *yellowImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"yellowColorSetting"]];
-    
-    UIView * purpleView= [self.segmentedControl.subviews objectAtIndex:2];
 
 
+
+}
+- (IBAction)button:(UIButton *)sender {
+    
+    switch(sender.tag)
+    {
+        case kGreenButton:
+            NSLog(@"Green Button");
+            break;
+        case kYellowButton:
+            NSLog(@"Yellow Button");
+
+            break;
+        case kPurpleButton:
+            NSLog(@"Purple Button");
+
+            break;
+        default:
+            NSLog(@"Something broke, in SettingsColorTableView");
+            break;
+            
+    }
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
