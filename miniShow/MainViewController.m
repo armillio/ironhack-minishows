@@ -139,6 +139,7 @@ NSUInteger const kCellSpacing = 5;
 {
     self.showViewController = [[ShowViewController alloc] initWithNibName:@"ShowViewController" bundle:[NSBundle mainBundle]];
     self.showViewController.showImage = self.mainShowsContent[indexPath.row][3];
+    self.showViewController.title = self.mainShowsContent[indexPath.row][0];
     [self.navigationController pushViewController:self.showViewController animated:YES];
 }
 

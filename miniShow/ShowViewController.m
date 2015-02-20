@@ -55,9 +55,7 @@ static NSString *const overviewTitle = @"Overview";
                                                                      NSForegroundColorAttributeName : [UIColor colorWithRed:113.0/255.0
                                                                                                                   green:113.0/255.0
                                                                                                                    blue:113.0/255.0
-                                                                                                                  alpha:1.0]};
-    //Change for the real value
-    self.title = @"Breaking Bad";
+                                                                                                                  alpha:1.0] };
 
     self.statusBarHeight = [UIApplication sharedApplication].statusBarFrame.size.height;
     self.navigationBarHeight = self.navigationController.navigationBar.frame.size.height;
