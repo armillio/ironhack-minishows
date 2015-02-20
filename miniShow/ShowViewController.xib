@@ -28,8 +28,9 @@
                         <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mnq-zh-btc">
                             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WallpaperWizard" translatesAutoresizingMaskIntoConstraints="NO" id="nIl-yf-o5W" userLabel="ShowImageView">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nIl-yf-o5W" userLabel="ShowImageView">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="240"/>
+                                    <color key="backgroundColor" red="0.4941176471" green="0.82745098039999998" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="240" id="Nix-Vl-0Nx"/>
                                     </constraints>
@@ -122,7 +123,6 @@
         </view>
     </objects>
     <resources>
-        <image name="WallpaperWizard" width="640" height="480"/>
         <image name="infoButton" width="53" height="53"/>
         <image name="seenButton" width="61" height="51"/>
         <image name="shareButton" width="45" height="54"/>
