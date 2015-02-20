@@ -3,9 +3,10 @@
 //  miniShow
 //
 //  Created by Jessie Serrino on 17/02/15.
+//  Modified by Armando Carmona on 20/02/15
 //  Copyright (c) 2015 Jessie Serrino. All rights reserved.
-//
 
+#import "NavigationAnimationController.h"
 #import "MainViewController.h"
 #import "ShowViewController.h"
 #import "SettingsViewController.h"
@@ -16,15 +17,14 @@ NSUInteger const kCellHeightPortrait = 90;
 NSUInteger const kCellHeightLandscape = 70;
 NSUInteger const kCellSpacing = 5;
 
-
-
-@interface MainViewController () <UITableViewDataSource,UITableViewDelegate>
+@interface MainViewController () <UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate, UIViewControllerTransitioningDelegate>
 
 @property (nonatomic, strong) ShowViewController *showViewController;
 @property (nonatomic, strong) SettingsViewController *settingsViewController;
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 
+@property (strong, nonatomic) NSArray *mainShowsContent;
 @end
 
 @implementation MainViewController
@@ -34,6 +34,21 @@ NSUInteger const kCellSpacing = 5;
     
     [self initializeTableView];
     [self updateViewAesthetics];
+    
+    self.navigationController.delegate = self;
+    
+    self.mainShowsContent = @[ @[@"Breaking Bad", @"Season 2 Episode 1", @"5 behind", @"WallpaperWizard"],
+                            @[@"Breaking Bad", @"Season 3 Episode 1", @"5 behind", @"breaking_bad"],
+                            @[@"Breaking Bad", @"Season 4 Episode 2", @"4 behind", @"breaking_bad"],
+                            @[@"Breaking Bad", @"Season 3 Episode 3", @"5 behind", @"breaking_bad"],
+                            @[@"Breaking Bad", @"Season 3 Episode 4", @"1 behind", @"breaking_bad"],
+                            @[@"Breaking Bad", @"Season 5 Episode 5", @"5 behind", @"breaking_bad"],
+                            @[@"Breaking Bad", @"Season 3 Episode 6", @"2 behind", @"breaking_bad"],
+                            @[@"Breaking Bad", @"Season 3 Episode 7", @"5 behind", @"breaking_bad"],
+                            @[@"Breaking Bad", @"Season 3 Episode 8", @"4 behind", @"breaking_bad"],
+                            @[@"Breaking Bad", @"Season 3 Episode 9", @"5 behind", @"breaking_bad"],
+                            @[@"Breaking Bad", @"Season 3 Episode 10", @"5 behind", @"breaking_bad"]];
+  
 }
 
 - (void) initializeTableView
@@ -61,15 +76,19 @@ NSUInteger const kCellSpacing = 5;
 - (void) openSettings
 {
     self.settingsViewController = [[SettingsViewController alloc] initWithNibName:@"SettingsViewController" bundle:[NSBundle mainBundle]];
-    [self.navigationController pushViewController: self.settingsViewController animated:YES];
+    
+    //Present modal view
+    [self.navigationController presentViewController:self.settingsViewController
+                                            animated:YES
+                                          completion:nil];
 }
 
--(void) openShowView
+/*-(void) openShowView
 {
     self.showViewController = [[ShowViewController alloc] initWithNibName:@"ShowViewController" bundle:[NSBundle mainBundle]];
     
     [self.navigationController pushViewController:self.showViewController animated:YES];
-}
+}*/
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -79,15 +98,13 @@ NSUInteger const kCellSpacing = 5;
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 10;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 1;
+    return self.mainShowsContent.count;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
@@ -104,25 +121,46 @@ NSUInteger const kCellSpacing = 5;
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     MainViewTableViewCell *cell = (MainViewTableViewCell *)[tableView dequeueReusableCellWithIdentifier:NSStringFromClass([MainViewTableViewCell class]) forIndexPath:indexPath];
     
-    [cell adjustCellAppearance];
-
+    cell.titleLabel.text = self.mainShowsContent[indexPath.row][0];
+    cell.descriptionLabel.text = self.mainShowsContent[indexPath.row][1];
+    cell.behindCountLabel.text = self.mainShowsContent[indexPath.row][2];
+    cell.iv.image = [UIImage imageNamed:self.mainShowsContent[indexPath.row][3]];
+    cell.iv.clipsToBounds = YES;
+    
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if(self.view.frame.size.width < 450)
+    {
         return kCellHeightPortrait;
-    else
+    }else{
         return kCellHeightLandscape;
+    }
 }
 
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self openShowView];
+    self.showViewController = [[ShowViewController alloc] initWithNibName:@"ShowViewController" bundle:[NSBundle mainBundle]];
+    self.showViewController.showImage = self.mainShowsContent[indexPath.row][3];
+    [self.navigationController pushViewController:self.showViewController animated:YES];
+
+}
+
+-(id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC
+{
+    NavigationAnimationController *animator  = [[NavigationAnimationController alloc] init];
+    
+    animator.operation = operation;
+    
+    return animator;
+    
+    return nil;
 }
 
 /*

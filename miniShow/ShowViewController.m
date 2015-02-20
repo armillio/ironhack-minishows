@@ -10,14 +10,13 @@
 
 @interface ShowViewController () <UIScrollViewDelegate>
 
+@property (weak, nonatomic) IBOutlet UIScrollView *showScrollView;
 @property (weak, nonatomic) IBOutlet UIView *showButtonBar;
 @property (weak, nonatomic) IBOutlet UITextView *showContent;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *showButtonBarConstrait;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *showImageConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *showImageWidthConstraint;
-
-@property (weak, nonatomic) IBOutlet UIImageView *showImage;
 
 @property (assign, nonatomic) CGFloat initialImageConstraintValue;
 @property (assign, nonatomic) CGFloat actualImageConstraintValue;

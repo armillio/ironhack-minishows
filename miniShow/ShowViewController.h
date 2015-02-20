@@ -10,7 +10,8 @@
 
 @interface ShowViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UIScrollView *showScrollView;
+@property (weak, nonatomic) IBOutlet UIImageView *showImage;
+
 @property (strong, nonatomic) NSString *generalInfoContent;
 @property (strong, nonatomic) NSString *overviewContent;
 
