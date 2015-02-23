@@ -1,75 +1,75 @@
 //
-//  MainViewController.m
+//  SettingsTableViewController.m
 //  miniShow
 //
-//  Created by Jessie Serrino on 17/02/15.
-//  Copyright (c) 2015 Jessie Serrino. All rights reserved.
+//  Created by Armando on 17/02/15.
+//  Copyright (c) 2015 Armando Carmona. All rights reserved.
 //
 
-#import "MainViewController.h"
-#import "ShowViewController.h"
 #import "SettingsTableViewController.h"
+#import "SettingsColorTableViewCell.h"
+#import "SettingsLayoutTableViewCell.h"
+#import "SettingsGenericTableViewCell.h"
 #import "MainViewTableViewCell.h"
-#import "SettingsViewController.h"
 
-NSString * const kMainShowCellIdentifier = @"MainShowCell";
-NSUInteger const kCellHeightPortrait = 90;
-NSUInteger const kCellHeightLandscape = 70;
-NSUInteger const kCellSpacing = 5;
+static NSInteger const kCellCount = 7;
 
+typedef enum : NSUInteger {
+    LayoutPickType = 0,
+    ColorPickCellType,
+    GenericCellType
+} CellTypes;
 
-
-@interface MainViewController () <UITableViewDataSource,UITableViewDelegate>
-
-@property (nonatomic, strong) ShowViewController *showViewController;
-@property (nonatomic, strong) SettingsTableViewController *settingsViewController;
-
+@interface SettingsTableViewController ()
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
-
+@property (strong, nonatomic) NSArray *genericCellTitles;
 @end
 
-@implementation MainViewController
+@implementation SettingsTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    //[self updateViewAesthetics];
     [self initializeTableView];
-    [self updateViewAesthetics];
+    [self prepareGenericCells];
 }
+
 
 - (void) initializeTableView
 {
-    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([MainViewTableViewCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([MainViewTableViewCell class])];
+    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([SettingsLayoutTableViewCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([SettingsLayoutTableViewCell class])];
+    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([SettingsColorTableViewCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([SettingsColorTableViewCell class])];
+
+    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([SettingsGenericTableViewCell class]) bundle:nil]
+     forCellReuseIdentifier:NSStringFromClass([SettingsGenericTableViewCell class])];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
+    
+    CGRect rect = self.view.bounds;
+    rect.size.height = 0;
+    UIView *rootView = [[[NSBundle mainBundle] loadNibNamed:@"SettingsFooterView" owner:self options:nil] objectAtIndex:0];
+    rootView.frame = rect;
+    self.tableView.tableFooterView = rootView;
+
+
 }
+
 
 - (void) updateViewAesthetics
 {
-    // Navigation Bar Items
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(openShowView)];
-    
-    
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"settingsButton"] style:UIBarButtonItemStylePlain target:self action:@selector(openSettings)];
-    
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"closeButton"] style:UIBarButtonItemStylePlain target:self action:@selector(goBackToMainView)];
+
     // Title in Navigation Bar
-    self.navigationItem.title = @"miniSHOWS";
-
-    
-    self.tableView.separatorStyle =UITableViewCellSeparatorStyleNone;
+    self.navigationItem.title = @"SETTINGS";
 }
 
-- (void) openSettings
+- (void) prepareGenericCells
 {
-    self.settingsViewController = [[SettingsTableViewController alloc] initWithNibName:@"SettingsTableViewController" bundle:[NSBundle mainBundle]];
-    [self.navigationController pushViewController: self.settingsViewController animated:YES];
-}
-
--(void) openShowView
-{
-    self.showViewController = [[ShowViewController alloc] initWithNibName:@"ShowViewController" bundle:[NSBundle mainBundle]];
-    
-    [self.navigationController pushViewController:self.showViewController animated:YES];
+    self.genericCellTitles = @[@"Tinted Background",
+                               @"Next Episode Sorting",
+                               @"Last Episode Sorting",
+                               @"Alphabetical Sorting",
+                               @"Badge App Icon"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -80,50 +80,53 @@ NSUInteger const kCellSpacing = 5;
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 10;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return 1;
-}
-
--(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-{
-    return kCellSpacing;
-}
-
--(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
-    UIView *v = [UIView new];
-    [v setBackgroundColor:[UIColor clearColor]];
-    return v;
+    return kCellCount;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    MainViewTableViewCell *cell = (MainViewTableViewCell *)[tableView dequeueReusableCellWithIdentifier:NSStringFromClass([MainViewTableViewCell class]) forIndexPath:indexPath];
     
-    [cell adjustCellAppearance];
+    NSInteger cellNumber = [indexPath row];
+    UITableViewCell *cell;
+    
+    if(cellNumber == LayoutPickType)
+    {
+        // Code for SettingsLayoutTableView
+         cell =[tableView dequeueReusableCellWithIdentifier:NSStringFromClass([SettingsLayoutTableViewCell class]) forIndexPath:indexPath];
+    }
+    else if(cellNumber == ColorPickCellType)
+    {
+        // Code for SettingsColorTableViewCell
+        cell =[tableView dequeueReusableCellWithIdentifier:NSStringFromClass([SettingsColorTableViewCell class]) forIndexPath:indexPath];
 
+    }
+    else
+    {
+        cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([SettingsGenericTableViewCell class]) forIndexPath:indexPath];
+        SettingsGenericTableViewCell *c = (SettingsGenericTableViewCell*) cell;
+        NSInteger index = cellNumber - 2;
+        [c setLabelText:self.genericCellTitles[index]];
+        
+    }
+    
     return cell;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+-(void) goBackToMainView
 {
-    if(self.view.frame.size.width < 450)
-        return kCellHeightPortrait;
-    else
-        return kCellHeightLandscape;
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 
-- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    [self openShowView];
-}
+
+
+
 
 /*
 // Override to support conditional editing of the table view.
