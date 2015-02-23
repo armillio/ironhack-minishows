@@ -9,8 +9,9 @@
 #import "NavigationAnimationController.h"
 #import "MainViewController.h"
 #import "ShowViewController.h"
-#import "SettingsViewController.h"
+#import "SettingsTableViewController.h"
 #import "MainViewTableViewCell.h"
+#import "SettingsViewController.h"
 
 NSString * const kMainShowCellIdentifier = @"MainShowCell";
 NSUInteger const kCellHeightPortrait = 90;
@@ -20,7 +21,7 @@ NSUInteger const kCellSpacing = 5;
 @interface MainViewController () <UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate, UIViewControllerTransitioningDelegate>
 
 @property (nonatomic, strong) ShowViewController *showViewController;
-@property (nonatomic, strong) SettingsViewController *settingsViewController;
+@property (nonatomic, strong) SettingsTableViewController *settingsViewController;
 
 @property (strong, nonatomic) NSArray *mainShowsContent;
 @end

@@ -1,5 +1,5 @@
 //
-//  SettingsLayoutTableViewCell.h
+//  SettingsGenericTableViewCell.h
 //  miniShow
 //
 //  Created by Jessie Serrino on 2/20/15.
@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SettingsLayoutTableViewCell : UITableViewCell
+@interface SettingsGenericTableViewCell : UITableViewCell
+
+- (void) setLabelText:(NSString *) text;
 
 @end

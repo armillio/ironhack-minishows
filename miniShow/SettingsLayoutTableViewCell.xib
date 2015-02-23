@@ -14,27 +14,63 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="xrk-sV-frL">
-                        <rect key="frame" x="10" y="7" width="300" height="29"/>
-                        <segments>
-                            <segment title="LIST LAYOUT"/>
-                            <segment title="GRID LAYOUT"/>
-                        </segments>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="settingsDividerLine" translatesAutoresizingMaskIntoConstraints="NO" id="eq6-Qf-khj">
+                        <rect key="frame" x="159" y="9.5" width="1" height="26"/>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fNH-PZ-eoB">
+                        <rect key="frame" x="17" y="10" width="123" height="23"/>
+                        <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="14"/>
+                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="5" maxY="0.0"/>
+                        <state key="normal" title="LIST LAYOUT" image="listLayoutOFFButton">
+                            <color key="titleColor" red="0.59215686274509804" green="0.59215686274509804" blue="0.59215686274509804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <state key="selected" image="listLayoutONButton">
+                            <color key="titleColor" red="0.49411764705882355" green="0.82745098039215681" blue="0.12941176470588237" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
                         <connections>
-                            <action selector="selectionChanged:" destination="KGk-i7-Jjw" eventType="valueChanged" id="76o-nL-iuW"/>
+                            <action selector="buttonPressed:" destination="KGk-i7-Jjw" eventType="touchDown" id="zG8-fv-jWa"/>
                         </connections>
-                    </segmentedControl>
+                    </button>
+                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="day-TS-alp">
+                        <rect key="frame" x="178" y="5" width="123" height="32"/>
+                        <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="14"/>
+                        <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="-5" maxY="0.0"/>
+                        <state key="normal" title="GRID LAYOUT" image="gridLayoutOFFButton">
+                            <color key="titleColor" red="0.59215686274509804" green="0.59215686274509804" blue="0.59215686274509804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <state key="selected" image="gridLayoutONButton">
+                            <color key="titleColor" red="0.4941176471" green="0.82745098039999998" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="buttonPressed:" destination="KGk-i7-Jjw" eventType="touchDown" id="Kkg-26-P2r"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="centerX" secondItem="xrk-sV-frL" secondAttribute="centerX" id="9kC-D9-aH0"/>
-                    <constraint firstAttribute="centerY" secondItem="xrk-sV-frL" secondAttribute="centerY" id="Czi-1n-DPu"/>
-                    <constraint firstItem="xrk-sV-frL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="2" id="bSv-PG-mEv"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="xrk-sV-frL" secondAttribute="trailing" constant="2" id="uRS-32-ZL1"/>
+                    <constraint firstAttribute="centerY" secondItem="fNH-PZ-eoB" secondAttribute="centerY" constant="0.25" id="4kj-Yo-G7g"/>
+                    <constraint firstAttribute="centerY" secondItem="eq6-Qf-khj" secondAttribute="centerY" id="7o8-2f-xMv"/>
+                    <constraint firstItem="fNH-PZ-eoB" firstAttribute="width" secondItem="day-TS-alp" secondAttribute="width" id="Euj-vr-jtI"/>
+                    <constraint firstAttribute="centerY" secondItem="day-TS-alp" secondAttribute="centerY" id="MrO-AG-2G8"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="eq6-Qf-khj" secondAttribute="bottom" id="hFV-fT-TLb"/>
+                    <constraint firstAttribute="centerX" secondItem="day-TS-alp" secondAttribute="centerX" constant="-80" id="iHv-i3-lcl"/>
+                    <constraint firstAttribute="centerX" secondItem="fNH-PZ-eoB" secondAttribute="centerX" constant="81" id="mJd-RS-LcF"/>
+                    <constraint firstAttribute="centerX" secondItem="eq6-Qf-khj" secondAttribute="centerX" id="zPc-Qb-jdg"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="segmentedControl" destination="xrk-sV-frL" id="0YS-WO-EqB"/>
+                <outlet property="gridLayoutButton" destination="day-TS-alp" id="WO6-KU-4dV"/>
+                <outlet property="listLayoutButton" destination="fNH-PZ-eoB" id="IR8-N4-Uhe"/>
             </connections>
+            <point key="canvasLocation" x="139.5" y="250"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="gridLayoutOFFButton" width="32" height="32"/>
+        <image name="gridLayoutONButton" width="32" height="32"/>
+        <image name="listLayoutOFFButton" width="27" height="23"/>
+        <image name="listLayoutONButton" width="27" height="23"/>
+        <image name="settingsDividerLine" width="1" height="30"/>
+    </resources>
 </document>

@@ -1,42 +1,33 @@
 //
-//  SettingsSwitchTableViewCell.m
+//  SettingsLayoutTableViewCell.m
 //  miniShow
 //
-//  Created by Jessie Serrino on 2/18/15.
+//  Created by Jessie Serrino on 2/20/15.
 //  Copyright (c) 2015 Ironhack. All rights reserved.
 //
 
 #import "SettingsLayoutTableViewCell.h"
 
+static NSInteger const kListLayout = 0;
+static NSInteger const kGridLayout = 1;
 
 
-@interface SettingsLayoutTableViewCell ()
-
-@property (nonatomic, strong) UIView *leftButton;
-@property (nonatomic, strong) UIView *rightButton;
-
+@interface SettingsLayoutTableViewCell()
+@property (strong, nonatomic) IBOutlet UIButton *listLayoutButton;
+@property (strong, nonatomic) IBOutlet UIButton *gridLayoutButton;
 
 @end
 
 @implementation SettingsLayoutTableViewCell
-- (IBAction)selectionChanged:(UISegmentedControl *)sender {
-    
-    if(sender.selectedSegmentIndex == 1)
-    {
-    
-    }
-}
 
 - (void)awakeFromNib {
     // Initialization code
-    self.segmentedControl.tintColor = [UIColor clearColor];
     
-    self.leftButton = [self.segmentedControl.subviews objectAtIndex:1];
-    self.leftButton.backgroundColor = [UIColor redColor];
-    self.rightButton = [self.segmentedControl.subviews objectAtIndex:0];
-    self.rightButton.backgroundColor = [UIColor blueColor];
+}
+- (IBAction)buttonPressed:(UIButton *)button {
     
-    
+    self.listLayoutButton.selected = (button.tag == kListLayout);
+    self.gridLayoutButton.selected = !self.listLayoutButton.selected;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

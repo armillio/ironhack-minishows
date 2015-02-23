@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="245" height="50"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="miniSHOWS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yRf-Dc-vUr">
+                    <rect key="frame" x="85" y="1" width="76.5" height="14"/>
+                    <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="14"/>
+                    <color key="textColor" red="0.49411764705882355" green="0.82745098039215681" blue="0.12941176470588237" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="version 1.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WRw-y7-EjQ">
+                    <rect key="frame" x="98" y="17" width="50" height="10"/>
+                    <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="10"/>
+                    <color key="textColor" red="0.4941176471" green="0.82745098039999998" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dmL-3F-3LQ">
+                    <rect key="frame" x="144" y="31.5" width="92" height="17"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="92" id="Q8j-Uw-4vz"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="10"/>
+                    <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                    <state key="normal" title="@miniSHOWS" image="twitterButton">
+                        <color key="titleColor" red="0.4941176471" green="0.82745098039999998" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Uo-tW-SfJ">
+                    <rect key="frame" x="5" y="32" width="129" height="16"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="129" id="JXr-Z0-Aao"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="10"/>
+                    <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <state key="normal" title="www.minishows.com" image="websiteButton">
+                        <color key="titleColor" red="0.4941176471" green="0.82745098039999998" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="centerX" secondItem="yRf-Dc-vUr" secondAttribute="centerX" id="9QD-O0-OlV"/>
+                <constraint firstItem="yRf-Dc-vUr" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="1" id="C2a-qT-0ki"/>
+                <constraint firstItem="dmL-3F-3LQ" firstAttribute="centerY" secondItem="1Uo-tW-SfJ" secondAttribute="centerY" id="CKU-b0-YsN"/>
+                <constraint firstItem="WRw-y7-EjQ" firstAttribute="centerY" secondItem="yRf-Dc-vUr" secondAttribute="centerY" constant="14" id="EOP-zS-3vn"/>
+                <constraint firstAttribute="bottom" secondItem="1Uo-tW-SfJ" secondAttribute="bottom" constant="2" id="TkM-pA-znB"/>
+                <constraint firstItem="WRw-y7-EjQ" firstAttribute="centerX" secondItem="yRf-Dc-vUr" secondAttribute="centerX" id="XGK-US-Al2"/>
+                <constraint firstAttribute="centerY" secondItem="WRw-y7-EjQ" secondAttribute="centerY" id="Ydr-Sf-cPs"/>
+                <constraint firstAttribute="centerX" secondItem="WRw-y7-EjQ" secondAttribute="centerX" id="dDZ-Jw-H2n"/>
+                <constraint firstAttribute="centerX" secondItem="dmL-3F-3LQ" secondAttribute="centerX" constant="-68" id="faN-3L-SqY"/>
+                <constraint firstItem="dmL-3F-3LQ" firstAttribute="leading" secondItem="1Uo-tW-SfJ" secondAttribute="trailing" constant="10" id="j9s-u2-y1h"/>
+                <constraint firstItem="1Uo-tW-SfJ" firstAttribute="top" secondItem="WRw-y7-EjQ" secondAttribute="bottom" constant="5" id="jyO-j7-ahZ"/>
+                <constraint firstItem="dmL-3F-3LQ" firstAttribute="top" secondItem="WRw-y7-EjQ" secondAttribute="bottom" constant="4.5" id="xBW-bw-bu0"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="Ydr-Sf-cPs"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="437.5" y="342"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="twitterButton" width="17" height="17"/>
+        <image name="websiteButton" width="17" height="17"/>
+    </resources>
+</document>
