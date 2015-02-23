@@ -6,12 +6,12 @@
 //  Modified by Armando Carmona on 20/02/15
 //  Copyright (c) 2015 Jessie Serrino. All rights reserved.
 
-#import "NavigationAnimationController.h"
 #import "MainViewController.h"
 #import "ShowViewController.h"
 #import "SettingsTableViewController.h"
 #import "MainViewTableViewCell.h"
 #import "SettingsViewController.h"
+#import "ShowNavigationAnimationController.h"
 
 NSString * const kMainShowCellIdentifier = @"MainShowCell";
 NSUInteger const kCellHeightPortrait = 90;
@@ -74,7 +74,7 @@ NSUInteger const kCellSpacing = 5;
 
 - (void) openSettings
 {
-    self.settingsViewController = [[SettingsViewController alloc] initWithNibName:@"SettingsViewController" bundle:[NSBundle mainBundle]];
+    self.settingsViewController = [[SettingsTableViewController alloc] initWithNibName:@"SettingsViewController" bundle:[NSBundle mainBundle]];
     
     //Present modal view
     [self.navigationController presentViewController:self.settingsViewController
@@ -112,7 +112,6 @@ NSUInteger const kCellSpacing = 5;
     return v;
 }
 
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     MainViewTableViewCell *cell = (MainViewTableViewCell *)[tableView dequeueReusableCellWithIdentifier:NSStringFromClass([MainViewTableViewCell class]) forIndexPath:indexPath];
@@ -146,13 +145,11 @@ NSUInteger const kCellSpacing = 5;
 
 -(id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC
 {
-    NavigationAnimationController *animator  = [[NavigationAnimationController alloc] init];
+    ShowNavigationAnimationController *animator  = [[ShowNavigationAnimationController alloc] init];
     
     animator.operation = operation;
     
     return animator;
-    
-    return nil;
 }
 
 @end

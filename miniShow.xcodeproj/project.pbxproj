@@ -18,9 +18,13 @@
 		4751DEC51A938F7900A224E2 /* SettingsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4751DEBE1A938F7900A224E2 /* SettingsTableViewController.xib */; };
 		4751DEC61A938F7900A224E2 /* ShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4751DEC01A938F7900A224E2 /* ShowViewController.m */; };
 		4751DEC71A938F7900A224E2 /* ShowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4751DEC11A938F7900A224E2 /* ShowViewController.xib */; };
-		47D19EBB1A974C7600B372B3 /* NavigationAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47D19EBA1A974C7600B372B3 /* NavigationAnimationController.m */; };
-		9131FDC11A94F75C00212927 /* SettingsLayoutTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9131FDBF1A94F75C00212927 /* SettingsLayoutTableViewCell.m */; };
-		9131FDC21A94F75C00212927 /* SettingsLayoutTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9131FDC01A94F75C00212927 /* SettingsLayoutTableViewCell.xib */; };
+		476014D71A9BA3E4004C4718 /* ShowNavigationAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 476014D61A9BA3E4004C4718 /* ShowNavigationAnimationController.m */; };
+		9100B1BD1A9754F500942064 /* SettingsLayoutTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9100B1BB1A9754F500942064 /* SettingsLayoutTableViewCell.m */; };
+		9100B1BE1A9754F500942064 /* SettingsLayoutTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9100B1BC1A9754F500942064 /* SettingsLayoutTableViewCell.xib */; };
+		9100B1C41A97709600942064 /* SettingsGenericTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9100B1C21A97709600942064 /* SettingsGenericTableViewCell.m */; };
+		9100B1C51A97709600942064 /* SettingsGenericTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9100B1C31A97709600942064 /* SettingsGenericTableViewCell.xib */; };
+		9100B1C71A97791E00942064 /* SettingsFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9100B1C61A97791E00942064 /* SettingsFooterView.xib */; };
+		9100B1CC1A979A4100942064 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9100B1CA1A979A4100942064 /* SettingsViewController.xib */; };
 		9131FDC61A94F7A100212927 /* SettingsColorTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9131FDC41A94F7A100212927 /* SettingsColorTableViewCell.m */; };
 		9131FDC71A94F7A100212927 /* SettingsColorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9131FDC51A94F7A100212927 /* SettingsColorTableViewCell.xib */; };
 		91601F691A939893002BC22D /* MainViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91601F671A939893002BC22D /* MainViewTableViewCell.m */; };
@@ -57,12 +61,19 @@
 		4751DEBF1A938F7900A224E2 /* ShowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowViewController.h; sourceTree = "<group>"; };
 		4751DEC01A938F7900A224E2 /* ShowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowViewController.m; sourceTree = "<group>"; };
 		4751DEC11A938F7900A224E2 /* ShowViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShowViewController.xib; sourceTree = "<group>"; };
-		47D19EB91A974C7600B372B3 /* NavigationAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationAnimationController.h; sourceTree = "<group>"; };
-		47D19EBA1A974C7600B372B3 /* NavigationAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationAnimationController.m; sourceTree = "<group>"; };
-		9131FDBE1A94F75C00212927 /* SettingsLayoutTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsLayoutTableViewCell.h; sourceTree = "<group>"; };
-		9131FDBF1A94F75C00212927 /* SettingsLayoutTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsLayoutTableViewCell.m; sourceTree = "<group>"; };
-		9131FDC01A94F75C00212927 /* SettingsLayoutTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsLayoutTableViewCell.xib; sourceTree = "<group>"; };
-		9131FDC31A94F7A100212927 /* SettingsColorTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsColorTableViewCell.h; sourceTree = "<group>"; };
+		476014D51A9BA3E4004C4718 /* ShowNavigationAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowNavigationAnimationController.h; sourceTree = "<group>"; };
+		476014D61A9BA3E4004C4718 /* ShowNavigationAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowNavigationAnimationController.m; sourceTree = "<group>"; };
+		9100B1B61A974C1D00942064 /* SettingsColorTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsColorTableViewCell.h; sourceTree = "<group>"; };
+		9100B1BA1A9754F500942064 /* SettingsLayoutTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsLayoutTableViewCell.h; sourceTree = "<group>"; };
+		9100B1BB1A9754F500942064 /* SettingsLayoutTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsLayoutTableViewCell.m; sourceTree = "<group>"; };
+		9100B1BC1A9754F500942064 /* SettingsLayoutTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsLayoutTableViewCell.xib; sourceTree = "<group>"; };
+		9100B1C11A97709600942064 /* SettingsGenericTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsGenericTableViewCell.h; sourceTree = "<group>"; };
+		9100B1C21A97709600942064 /* SettingsGenericTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsGenericTableViewCell.m; sourceTree = "<group>"; };
+		9100B1C31A97709600942064 /* SettingsGenericTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsGenericTableViewCell.xib; sourceTree = "<group>"; };
+		9100B1C61A97791E00942064 /* SettingsFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsFooterView.xib; sourceTree = "<group>"; };
+		9100B1C81A979A4100942064 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		9100B1C91A979A4100942064 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		9100B1CA1A979A4100942064 /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		9131FDC41A94F7A100212927 /* SettingsColorTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsColorTableViewCell.m; sourceTree = "<group>"; };
 		9131FDC51A94F7A100212927 /* SettingsColorTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsColorTableViewCell.xib; sourceTree = "<group>"; };
 		91601F661A939893002BC22D /* MainViewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewTableViewCell.h; sourceTree = "<group>"; };
@@ -218,8 +229,8 @@
 				4751DEBA1A938F7900A224E2 /* MainViewController.m */,
 				91601F661A939893002BC22D /* MainViewTableViewCell.h */,
 				91601F671A939893002BC22D /* MainViewTableViewCell.m */,
-				47D19EB91A974C7600B372B3 /* NavigationAnimationController.h */,
-				47D19EBA1A974C7600B372B3 /* NavigationAnimationController.m */,
+				476014D51A9BA3E4004C4718 /* ShowNavigationAnimationController.h */,
+				476014D61A9BA3E4004C4718 /* ShowNavigationAnimationController.m */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -358,7 +369,7 @@
 				9131FDC61A94F7A100212927 /* SettingsColorTableViewCell.m in Sources */,
 				4751DE941A938EF400A224E2 /* main.m in Sources */,
 				4751DEC21A938F7900A224E2 /* MainViewController.m in Sources */,
-				47D19EBB1A974C7600B372B3 /* NavigationAnimationController.m in Sources */,
+				476014D71A9BA3E4004C4718 /* ShowNavigationAnimationController.m in Sources */,
 				4751DEC61A938F7900A224E2 /* ShowViewController.m in Sources */,
 				91601F691A939893002BC22D /* MainViewTableViewCell.m in Sources */,
 			);

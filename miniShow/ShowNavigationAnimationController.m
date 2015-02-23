@@ -1,23 +1,22 @@
 //
-//  NavigationAnimationController.m
+//  ShowNavigationAnimationController.m
 //  miniShow
 //
-//  Created by Armando on 20/02/15.
+//  Created by Armando on 23/02/15.
 //  Copyright (c) 2015 Ironhack. All rights reserved.
 //
-
-#import "NavigationAnimationController.h"
-#import "MainViewTableViewCell.h"
 #import "MainViewController.h"
+#import "MainViewTableViewCell.h"
 #import "ShowViewController.h"
+#import "ShowNavigationAnimationController.h"
 
+@interface  ShowNavigationAnimationController() <UINavigationControllerDelegate>
 
-@interface  NavigationAnimationController() <UINavigationControllerDelegate>
 @end
 
 static CGFloat const totalDuration = 1.0;
 
-@implementation NavigationAnimationController
+@implementation ShowNavigationAnimationController
 
 -(NSTimeInterval)transitionDuration:(id<UIViewControllerContextTransitioning>)transitionContext
 {
@@ -39,7 +38,7 @@ static CGFloat const totalDuration = 1.0;
 {
     MainViewController *fromViewController = (MainViewController *)[transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     ShowViewController *toViewController = (ShowViewController *)[transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
-
+    
     MainViewTableViewCell *cell = (MainViewTableViewCell *) [fromViewController.tableView cellForRowAtIndexPath:fromViewController.tableView.indexPathForSelectedRow];
     
     UIView *contextView = [transitionContext containerView];
@@ -107,4 +106,5 @@ static CGFloat const totalDuration = 1.0;
                                           }];
                      }];
 }
+
 @end
