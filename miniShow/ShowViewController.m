@@ -10,14 +10,13 @@
 
 @interface ShowViewController () <UIScrollViewDelegate>
 
+@property (weak, nonatomic) IBOutlet UIScrollView *showScrollView;
 @property (weak, nonatomic) IBOutlet UIView *showButtonBar;
 @property (weak, nonatomic) IBOutlet UITextView *showContent;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *showButtonBarConstrait;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *showImageConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *showImageWidthConstraint;
-
-@property (weak, nonatomic) IBOutlet UIImageView *showImage;
 
 @property (assign, nonatomic) CGFloat initialImageConstraintValue;
 @property (assign, nonatomic) CGFloat actualImageConstraintValue;
@@ -56,9 +55,7 @@ static NSString *const overviewTitle = @"Overview";
                                                                      NSForegroundColorAttributeName : [UIColor colorWithRed:113.0/255.0
                                                                                                                   green:113.0/255.0
                                                                                                                    blue:113.0/255.0
-                                                                                                                  alpha:1.0]};
-    //Change for the real value
-    self.title = @"Breaking Bad";
+                                                                                                                  alpha:1.0] };
 
     self.statusBarHeight = [UIApplication sharedApplication].statusBarFrame.size.height;
     self.navigationBarHeight = self.navigationController.navigationBar.frame.size.height;

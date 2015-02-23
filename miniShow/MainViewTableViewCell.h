@@ -18,6 +18,6 @@
 // Do not change: UITableViewCell already uses variable name imageView
 @property (weak, nonatomic) IBOutlet UIImageView *iv;
 
-- (void) adjustCellAppearance;
+//- (void) adjustCellAppearance;
 
 @end
