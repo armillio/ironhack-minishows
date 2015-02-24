@@ -74,7 +74,7 @@ NSUInteger const kCellSpacing = 5;
 
 - (void) openSettings
 {
-    self.settingsViewController = [[SettingsTableViewController alloc] initWithNibName:@"SettingsViewController" bundle:[NSBundle mainBundle]];
+    self.settingsViewController = [[SettingsTableViewController alloc] initWithNibName:NSStringFromClass([SettingsTableViewController class]) bundle:[NSBundle mainBundle]];
     
     //Present modal view
     [self.navigationController presentViewController:self.settingsViewController
