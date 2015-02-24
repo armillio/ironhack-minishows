@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>0DC61B4C-63C2-477C-8726-9F5F2B6114BD</string>
+	<key>IDESourceControlProjectName</key>
+	<string>miniShow</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>5DE856D4306E547433D692889EDEA10963C848CD</key>
+		<string>github.com:armillio/miniShows.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>miniShow.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>5DE856D4306E547433D692889EDEA10963C848CD</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:armillio/miniShows.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>5DE856D4306E547433D692889EDEA10963C848CD</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>5DE856D4306E547433D692889EDEA10963C848CD</string>
+			<key>IDESourceControlWCCName</key>
+			<string>miniShow</string>
+		</dict>
+	</array>
+</dict>
+</plist>
